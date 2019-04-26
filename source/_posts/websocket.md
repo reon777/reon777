@@ -3,6 +3,8 @@ title: bitflyerでwebsocketに接続できない子羊たちへ
 tags: [bot]
 ---
 
+{% asset_img sheep.png %}
+
 ようこそ、迷える子羊たちよ。
 bitflyer の websocket が繋がらなくて困ってるのですね？
 
