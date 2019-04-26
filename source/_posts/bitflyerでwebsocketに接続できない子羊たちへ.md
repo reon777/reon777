@@ -1,6 +1,6 @@
 ---
 title: bitflyerでwebsocketに接続できない子羊たちへ
-tags:
+tags: [bot]
 ---
 
 ようこそ、迷える子羊たちよ。
