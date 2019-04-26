@@ -22,7 +22,7 @@ pip install websocket-client==0.47.0
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 はい。これで分かりましたね。
-つまり`hoge(self, ws`を`hoge(self,`に置換すれば OK なのです！
+つまり`hoge(self, ws)`を`hoge(self)`に置換すれば OK なのです！
 簡単ですね。
 
 え？良く分からない？
