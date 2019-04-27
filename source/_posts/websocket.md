@@ -2,7 +2,7 @@
 title: bitflyerでwebsocketに接続できない子羊たちへ
 description: 最新バージョンのwebsocket-clientで動くコードについて情報をまとめました。
 tags: [bot]
-date: 2019-04-26
+date: 2019-04-27
 ---
 
 {% asset_img sheep.png %}
