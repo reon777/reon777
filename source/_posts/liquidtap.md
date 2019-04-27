@@ -1,9 +1,19 @@
 ---
 title: liquidtapの使い方
+date: 2019-04-28
 tags:
 ---
 
-Liquid bot を作るぞい！
+{% asset_img liquid.png %}
+
+手っ取り早く動くコード見せろやって人は以下のページ内リンクへどうぞ！
+[動くコード へ](#動くコード)
+
+以下、ほぼ蛇足です w
+
+## はじめに
+
+よし、Liquid bot を作るぞい！
 
 普通に注文したりするのは ccxt 使えば良いと思うんだけど、せっかくならリアルタイムで情報が欲しいですよね
 
@@ -12,18 +22,31 @@ bitflyer なら websocket がありますが、Liquid の場合は pusher とい
 てことで pusher の公式ページを見てみた
 https://pusher.com/
 
+{% asset_img pusher_en.png %}
+
 英語分からんマンなので Chrome の拡張機能で日本語に変換
+
+{% asset_img pusher_jp.png %}
 
 ＞当社のホスト型 pub / sub メッセージング API を使用して、スケーラブルなリアルタイムグラフ、ジオトラッキング、マルチプレイヤーゲームなどを Web アプリケーションやモバイルアプリケーションで簡単に構築できます。
 
 うん、全然分からん w
 分からない言葉を分からない言葉で説明するんじゃねええええええええええええ
 
+## 公式サイトを見てみる
+
 てことでもう何者か知らんけどとりあえず動けば良いんやろ！
 
 てことで liquidtap の公式サイトをコピペじゃあああああああああああ
 
+公式サイト
+https://pypi.org/project/liquidtap/
+
+```bash
 pip3 install liquidtap
+```
+
+でインストールしてから以下を実行してみる
 
 ```python
 import liquidtap
@@ -54,21 +77,22 @@ data が取得できないなあ
 
 なぜだ、、
 
-困った時のツイッタランド！
+## 困った時のツイッタランド！
+
 ってことで僕らの味方、ツイッターで検索すると良い感じのツイートが！
 
-https://twitter.com/AAAAisBraver/status/1115955786381836288
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="ja" dir="ltr">💩ードです（合ってんのかな<br><br>最初繋がらんかったけど、websocket-clientのバージョン上げたら繋がった<br><br>pip install websocket-client==0.56.0 <a href="https://t.co/j7C4SOdsP3">pic.twitter.com/j7C4SOdsP3</a></p>&mdash; ゆうしゃのぴーちゃん(ああああ) (@AAAAisBraver) <a href="https://twitter.com/AAAAisBraver/status/1115955786381836288?ref_src=twsrc%5Etfw">April 10, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ふむ、websocket-client のバージョンとな！
 
-早速バージョンアップ
+早速バージョンアップ！
+※バージョンアップでバグった時は以下の記事を参照しよう！
+{% post_link websocket %}
 
 ```bash
 pip install websocket-client==0.56.0
 ```
-
-なんかでもこれバージョン上げると bitflyer が繋がらなかった気がするけど気のせいかな。。。w
-まああとで確認する！
 
 で、改めて実行すると！
 
@@ -80,19 +104,15 @@ pip install websocket-client==0.56.0
 
 勇者さんありがとおおおおおおおおおおお
 
-せっかくなので勇者さんの NOTE を宣伝しときます w
-https://note.mu/17num/n/n0c0e4107d9fe
-
-僕も実際に買って使ってます！
-オススメです〜
+## 動くコード
 
 てことで改めて勇者さんのコードをコピペ
+※user_id の部分はよく分からなかったので削除してます（いいのか？）
 
 ```python
 import liquidtap
 from time import sleep
 
-user_id =
 token = ''
 secret = ''
 
@@ -101,12 +121,10 @@ def update_callback(data):
 
 tap = liquidtap.Client(token, secret)
 tap.pusher.connect()
-protected_channel = tap.subscribe(f'user_{user_id}')
 order_channel = tap.subscribe(f'user_account_jpy_orders')
 btcjpy_channel_buy = tap.subscribe(f'price_ladders_cash_btcjpy_buy')
 btcjpy_channel_sell = tap.subscribe(f'price_ladders_cash_btcjpy_sell')
 
-protected_channel.bind('updated', update_callback)
 order_channel.bind('updated', update_callback)
 btcjpy_channel_buy.bind('updated', update_callback)
 btcjpy_channel_sell.bind('updated', update_callback)
@@ -115,14 +133,12 @@ while True:
     sleep(1)
 ```
 
-で気づいたけど user_id って何ぞや。。？  
-token と secret は ccxt でも使ってるから分かるけど、user_id。。？
+## 全パラメータを確認
 
-よくわからんからとりあえずコメントアウトして動かしてみる（おい）
+色々取得していて何がなんやらってなったので１つずつ確認してみる
 
-と思ったけど色々取得していて何がなんやらってなったので１つずつ確認してみる
+### user_account_jpy_orders
 
-まずは user_account_jpy_orders
 これは自分の注文かな？
 動かしても何も取得できねえやん！とか思ったら注文してないからでした（あほ）
 
@@ -168,14 +184,17 @@ bitflyer でもぜひ対応してくれ〜〜〜
 
 で、改めて公式ページ見たら以下の情報が指定できるっぽいので全部試してみる
 
-products
+{% asset_img liquid_api_docs.png %}
+
+### products
 
 何も取得出来ねえ！
 なんやこれ！
 次！
 
-product*cash*${currency_pair_code}_${product_id}
+### product*cash\_\${currency_pair_code}*\${product_id}
 
+実際には以下で確認
 product_cash_btcjpy_5
 
 ```json
@@ -210,9 +229,11 @@ product_cash_btcjpy_5
 
 bitflyer でいう ticker 的なやつかな？
 ベスト価格は板見れば良いし直近約定価格は約定履歴見れば良いしでこいつの使わない気がするなあ
+次！
 
-### price*ladders_cash*${currency_pair_code}_${side}
+### price_ladders*cash\_\${currency_pair_code}*\${side}
 
+実際には以下で確認
 price_ladders_cash_btcjpy_sell
 
 ```bash
@@ -221,19 +242,21 @@ price_ladders_cash_btcjpy_sell
 
 これは買い板かな
 sell なのに買い板なんだね
-bitflyer そんなところあるのでそういうもんなのかな
+なんとなく違和感あるけど bitflyer もそんな感じなのでそういうもんなのかな
 
 それは良いけどちょっと待って、たった 40 個しかないんだが！？
 bitflyer でも 300 はあるよ！？
 たった 40 個でどうしろと。。
 こりゃ板は rest api 使う方が良いかもな〜
+次！
 
-### executions*cash*\${currency_pair_code}
+### executions_cash\_\${currency_pair_code}
 
+実際には以下で確認
 executions_cash_btcjpy
 
 うーん、何も取得出来ない、、
-なんか Event の欄が create になってるからそれが関係してそうだけど良く分からず、、
+なんか ドキュメントみると Event の欄が create になってるからそれが関係してそうだけど良く分からず、、
 まあ良いやっ
 
 と思ったけどなんかビビッときて
@@ -255,6 +278,10 @@ products.bind('created', update_callback)
 }
 ```
 
+約定ですね！
+良い感じ！
+次！
+
 ### execution_details_cash_btcusd
 
 ```json
@@ -274,10 +301,11 @@ products.bind('created', update_callback)
 executions_cash_btcjpy の方を使うメリットはあるのだろうか。。？
 
 てことでここまではパブリックなので実はトークンとかなくても取得できるやつで、ここからがプライベート！
-自分の情報だけ！良いね！
+自分の情報だけ！
 
-### user*account*\${funding_currency}\_trades
+### user_account\_\${funding_currency}\_trades
 
+実際には以下で確認
 user_account_jpy_trades
 
 注文入れても約定しても反応しない！なんだこれ！
@@ -317,14 +345,19 @@ user_account_jpy_trades
 ```
 
 普通に注文情報って感じかな？
-他との違いな何だろう？
+他との違いは何だろう？
 てか全然リアルタイムじゃねえ！
 
-### user*executions_cash*\${currency_pair_code}
+### user_executions_cash\_\${currency_pair_code}
 
+実際には以下で確認
 user_executions_cash_btcjpy
 
-なんか変だと思ったら公式ドキュメント、`user_`付け忘れてるじゃねーか w
+ちなみにこれなんか変だと思ったら公式ドキュメント、`user_`付け忘れてる w
+
+{% asset_img liquid_api_docs_user.png %}
+
+かわいいなあ全く
 
 ```json
 {
@@ -341,8 +374,10 @@ user_executions_cash_btcjpy
 ```
 
 お、これめっちゃ来るの早かった
-Web 画面に反映されるより早かった
+なんなら Web 画面に反映されるより早かった
 良いね！
+
+## おわりに
 
 てことでこれで全部っぽいね！
 

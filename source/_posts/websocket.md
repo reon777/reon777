@@ -1,5 +1,6 @@
 ---
 title: bitflyerでwebsocketに接続できない子羊たちへ
+description: 最新バージョンのwebsocket-clientで動くコードについて情報をまとめました。
 tags: [bot]
 ---
 
