@@ -228,7 +228,7 @@ product_cash_btcjpy_5
 ```
 
 bitflyer でいう ticker 的なやつかな？
-ベスト価格は板見れば良いし直近約定価格は約定履歴見れば良いしでこいつの使わない気がするなあ
+ベスト価格は板見れば良いし直近約定価格は約定履歴見れば良いしでこいつは使わない気がするなあ
 次！
 
 ### price_ladders*cash\_\${currency_pair_code}*\${side}
