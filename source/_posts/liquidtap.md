@@ -34,14 +34,11 @@ https://pusher.com/
 うん、全然分からん w
 分からない言葉を分からない言葉で説明するんじゃねええええええええええええ
 
-## 公式サイトを見てみる
+## 公式のライブラリページを見てみる
 
 てことでもう何者か知らんけどとりあえず動けば良いんやろ！
 
-てことで liquidtap の公式サイトをコピペじゃあああああああああああ
-
-公式サイト
-https://pypi.org/project/liquidtap/
+てことで liquidtap の[公式のライブラリページ](https://pypi.org/project/liquidtap/)をコピペじゃあああああああああああ
 
 ```bash
 pip3 install liquidtap
@@ -183,7 +180,7 @@ Web 画面を開いて 50 万円でビットコに買いを入れるとすぐに
 bitflyer でもぜひ対応してくれ〜〜〜  
 細かい項目の意味はおいおい調べるとしてとりあえず取得出来てるっぽくて何より！
 
-で、改めて公式ページ見たら以下の情報が指定できるっぽいので全部試してみる
+で、改めて [公式ページ](https://developers.liquid.com/#liquid-tap) 見たら以下の情報が指定できるっぽいので全部試してみる
 
 {% asset_img liquid_api_docs.png %}
 
