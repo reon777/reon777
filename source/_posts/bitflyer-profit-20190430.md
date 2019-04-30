@@ -38,7 +38,7 @@ description:
 
 いやー、嬉しい！
 
-なんか調子に乗った感じになってますが、月次と年次を見てもらえば分かりますが、普通にずっとマイナスでした w
+なんか調子に乗った感じになってますが、年次を見てもらえば分かりますが、普通にずっとマイナスでした w
 ずっとただのなんちゃって養分 botter でした w
 普通に bot 開発始めて１年半くらい経ってます w
 
@@ -59,7 +59,7 @@ description:
 
 ## おまけ
 
-ちなみに 2 月の終わりに 1 日だけ年次プラスになった時のツイートか２コマ漫画みたいになってて面白いので載せときます w
+ちなみに 2 月の終わりに 1 日だけ年次プラスになった時のツイートが２コマ漫画みたいになってて面白いので載せときます w
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">朝起きたら爆益でビビった！<br>年次もようやくプラスになったぞおおおお<br>やったー！ <a href="https://t.co/GF6AgFSr9R">pic.twitter.com/GF6AgFSr9R</a></p>&mdash; reon777 (@reo3313) <a href="https://twitter.com/reo3313/status/1099432726824857600?ref_src=twsrc%5Etfw">February 23, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
