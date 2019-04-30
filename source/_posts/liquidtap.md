@@ -1,8 +1,8 @@
 ---
 title: liquidtapの使い方
+date: 2019-04-28
 description: liquidtapの使い方です。コピペで動きます。
 tags: [bot]
-date: 2019-04-28
 ---
 
 {% asset_img liquid.png %}
