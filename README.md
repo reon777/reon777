@@ -30,4 +30,7 @@ gitlab に push するとデプロイされる
 ```bash
 # サイトマップ
 npm install hexo-generator-sitemap --save
+
+# フィード
+npm install hexo-generator-feed --save
 ```
