@@ -24,3 +24,10 @@ hexo publish "bitflyer_profit_20190430"
 
 Netlify で自動化済み
 gitlab に push するとデプロイされる
+
+### やったこと
+
+```bash
+# サイトマップ
+npm install hexo-generator-sitemap --save
+```
