@@ -1,5 +1,5 @@
 ---
-title: bitflyerのDBメンテナンス時刻判定(python)
+title: bitflyerのDBメンテナンス時間判定(python)
 date:
 description:
 tags: [bot, bitflyer, python]
