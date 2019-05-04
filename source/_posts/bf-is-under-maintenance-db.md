@@ -23,7 +23,7 @@ def is_under_maintenance_db(self):
     # 5が土曜日
     if datetime.today().weekday() == 5:
         hour = datetime.now().hour
-        if 2 <= hour and hour = 11:
+        if 2 <= hour and hour < 11:
             return True
 
     return False
