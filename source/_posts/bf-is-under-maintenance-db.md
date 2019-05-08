@@ -1,6 +1,6 @@
 ---
 title: bitflyerのDBメンテナンス時間判定(python)
-date:
+date: 2019-05-04
 description:
 tags: [bot, bitflyer, python]
 ---

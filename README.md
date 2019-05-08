@@ -1,7 +1,7 @@
 # 概要
 
 reon777 の個人ブログ（静的サイト）  
-reon777.com
+https://reon777.com
 
 ## 利用技術
 
