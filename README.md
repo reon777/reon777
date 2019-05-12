@@ -16,8 +16,16 @@ https://reon777.com
 ### 新しい記事を作成
 
 ```bash
+hexo new "low_leverage_simulation"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
+```
+
+### キャッシュを削除
+
+```bash
+hexo clean
+hexo g
 ```
 
 ### デプロイ

@@ -17,6 +17,8 @@ tags: [bot, bitflyer, python]
 という訳で DB メンテナンス時間の判定を行う関数を書きました。
 大した処理ではないですが誰かのググる時間を１秒でも短くできれば幸いです。
 
+<!-- more -->
+
 ```python
 from datetime import datetime
 def is_under_maintenance_db(self):

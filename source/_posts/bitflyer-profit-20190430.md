@@ -12,6 +12,8 @@ description:
 
 {% asset_img 20190430_215701_Discord_ChartWithValue_D.png %}
 
+<!-- more -->
+
 ## 月次損益
 
 {% asset_img 20190430_215701_Discord_ChartWithValue_M.png %}
