@@ -11,6 +11,8 @@ date: 2019-05-12
 
 {% asset_img 20190512_235801_Discord_ChartWithValue_F.png %}
 
+いや勝てるかー！
+
 <!-- more -->
 
 ## 所感
