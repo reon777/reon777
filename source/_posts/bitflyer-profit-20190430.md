@@ -11,6 +11,7 @@ description:
 ## 日時損益
 
 {% asset_img 20190430_215701_Discord_ChartWithValue_D.png %}
+...
 
 <!-- more -->
 

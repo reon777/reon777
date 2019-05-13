@@ -13,6 +13,7 @@ tags: [cordova, cordova-plugin-fcm]
 
 `cordova-plugin-fcm` を入れている状態で
 `cordova build android` すると表題のエラーになりました
+...
 
 <!-- more -->
 
