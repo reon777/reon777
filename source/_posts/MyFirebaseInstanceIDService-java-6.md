@@ -1,5 +1,5 @@
 ---
-title: 'MyFirebaseInstanceIDService.java:6: エラー: シンボルを見つけられません'
+title: '「MyFirebaseInstanceIDService.java:6: エラー: シンボルを見つけられません」エラーの解決策'
 date: 2019-05-08
 description:
 tags: [cordova, cordova-plugin-fcm]
@@ -8,8 +8,6 @@ tags: [cordova, cordova-plugin-fcm]
 **環境**
 
 - cordova-plugin-firebase 2.0.5
-
-## エラーについて
 
 `cordova-plugin-fcm` を入れている状態で
 `cordova build android` すると表題のエラーになりました
