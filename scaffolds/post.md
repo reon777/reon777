@@ -1,5 +1,5 @@
 ---
-title: { { title } }
+title:
 date: 2019-05-01
 tags:
   - bot
@@ -7,6 +7,6 @@ tags:
   - 損益公開
 ---
 
-{% asset_img sheep.png %}
+{% asset_img cordova.jpeg %}
 
 <!-- more -->
