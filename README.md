@@ -16,7 +16,7 @@ https://reon777.com
 ### 新しい記事を作成
 
 ```bash
-hexo new "cordova-ios_input"
+hexo new "Reviews_for_hoheto_Liquid_NOTE"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
 ```
