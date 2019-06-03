@@ -13,10 +13,12 @@ https://reon777.com
 
 ## 開発
 
+hexo server
+
 ### 新しい記事を作成
 
 ```bash
-hexo new "bitflyer-profit-20190519"
+hexo new "scrollLeft"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
 ```
