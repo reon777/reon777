@@ -1,34 +1,43 @@
 ---
-title: '「MyFirebaseInstanceIDService.java:6: エラー: シンボルを見つけられません」エラーの解決策'
+title: '【cordova-plugin-fcm】「MyFirebaseInstanceIDService.java:6: エラー: シンボルを見つけられません」エラーの解決策'
 date: 2019-05-08
 description:
 tags: [cordova, cordova-plugin-fcm]
 ---
 
-**環境**
+## 環境
 
-- cordova-plugin-firebase 2.0.5
+- cordova-plugin-fcm 2.1.2
+
+## 事象
 
 `cordova-plugin-fcm` を入れている状態で
 `cordova build android` すると表題のエラーになりました
-...
 
 <!-- more -->
 
 ## 解決策
 
-cordova plugin remove cordova-plugin-fcm
-cordova plugin add https://github.com/dpa99c/cordova-plugin-firebase#GH-1057-April-05-android-build-issue
+`platforms/android/project.properties`ファイルを以下の通りに書き換えれば OK
+
+```project.properties
+cordova.system.library.4=com.google.firebase:firebase-core:16.0.8
+cordova.system.library.5=com.google.firebase:firebase-messaging:17.5.0
+cordova.system.library.6=com.google.firebase:firebase-config:16.4.1
+cordova.system.library.7=com.google.firebase:firebase-perf:16.2.4
+```
+
+- `cordova.system.library.4`の数字の部分は異なる可能性がある
+- 自分の場合は`firebase-config`と`firebase-perf`はなかったので上の２つだけ修正しました
+- 末尾に空白があるとエラーになるので注意すること
 
 ## 参考
 
-https://forum.ionicframework.com/t/ionic-4-cordova-run-android-firebase-error-all-of-a-sudden/163204
+https://forum.ionicframework.com/t/ionic-4-cordova-run-android-firebase-error-all-of-a-sudden/163204/29
 
 ## 所感
 
-昨日(5/7)から発生し出した、できたてほやほやのエラーのようです
-おそらく何日か経てばマスタにマージされるのだと思います
-なのでこれは暫定対応ですね
-流石にまだ他に日本語記事がなさそうなので 1 番乗りだと思うので嬉しいです
+2019/5/7 から発生し出したライブラリのエラーのようです
+エラーこわい
 
 ではでは
