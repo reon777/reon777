@@ -1,6 +1,6 @@
 ---
 title: liquid
-date:
+date: 2019-06-06
 description:
 tags:
 ---

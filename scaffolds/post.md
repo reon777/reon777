@@ -1,12 +1,8 @@
 ---
 title:
-date: 2019-05-01
+date: 2019-06
 tags:
   - bot
-  - bitflyer
-  - 損益公開
 ---
-
-{% asset_img cordova.jpeg %}
 
 <!-- more -->
