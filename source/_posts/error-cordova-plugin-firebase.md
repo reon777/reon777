@@ -2,7 +2,6 @@
 title: 「Cannot add task ':app:processDebugGoogleServices' as a task with that name already exists」エラーの解決策
 tags:
   - cordova
-  - cordova-plugin-firebase
 date: 2019-05-14
 ---
 
