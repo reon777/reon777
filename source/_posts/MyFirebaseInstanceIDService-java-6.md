@@ -19,6 +19,7 @@ tags: [cordova]
 ## 解決策
 
 `platforms/android/project.properties`ファイルを以下の通りに書き換えれば OK
+→ つまりバージョンを固定しましょうってことですね。
 
 ```project.properties
 cordova.system.library.4=com.google.firebase:firebase-core:16.0.8
