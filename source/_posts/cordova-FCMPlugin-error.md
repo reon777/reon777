@@ -8,7 +8,7 @@ title: 【Cordova】cordova-plugin-fcmプラグインでエラー
 
 ## 環境
 
-- Mac Mojave10.14.4
+- Mac Mojave: 10.14.4
 - cordova-android: 7.1.4
 - cordova-plugin-fcm: 2.1.2
 
