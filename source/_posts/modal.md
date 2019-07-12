@@ -137,7 +137,7 @@ App.vue に以下を追加します。
   .modal-body {
     display: block;
     text-align: center;
-    padding: 5px 0 0 0;
+    padding: 5px 15px 0 15px;
     border: 0px;
     font-size: 0.9rem;
   }
