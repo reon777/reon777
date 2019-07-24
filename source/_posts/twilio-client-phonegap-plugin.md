@@ -54,7 +54,13 @@ Execution failed for task ':app:processReleaseManifest'.
 ##### エラー詳細
 
 ビルドすると、
-`resource android:attr/fontVariationSettings not found`
+
+```bash
+> Error: java.util.concurrent.ExecutionException: com.android.tools.aapt2.Aapt2Exception: AAPT2 error: check logs for details
+（略）
+resource android:attr/fontVariationSettings not found
+```
+
 のエラー発生
 
 ##### 解決策
