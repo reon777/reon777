@@ -134,6 +134,19 @@ Web サーバを起動して hello_world.html をブラウザで表示して do_
 
 {% asset_img 2019-07-31.png %}
 
+## エラー
+
+たまに以下のエラーが出ます
+
+```bash
+WebAssembly.Memory(): could not allocate memory
+```
+
+エラーが出たら開発者用コンソールを閉じてから画面を更新すると治ります
+
+参考
+https://github.com/emscripten-core/emscripten/issues/8126
+
 ### おわりに
 
 公式サンプルだと main 関数しかなくて自作関数の実行方法が載ってなくて辛かったです。
