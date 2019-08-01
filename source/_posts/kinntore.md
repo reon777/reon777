@@ -5,7 +5,7 @@ tags:
 title: 筋トレを始めて1ヶ月経った
 ---
 
-<img src="kinntore.jpeg" width="300px" height="200px">
+{% asset_img kinntore.jpeg %}
 
 ### はじめに
 
