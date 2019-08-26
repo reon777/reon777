@@ -25,6 +25,8 @@ https://www.npmjs.com/package/cordova-plugin-qrscanner
 cordova plugin add cordova-plugin-qrscanner@2.6.2
 ```
 
+XCode が 10.1 以下の場合は 2.6.2 より最新のものだとエラーになるので 2.6.2 を指定してます
+
 ### ライブラリを修正
 
 Xcode が 10.1 以下の場合は以下の修正をしないとエラーになります。
