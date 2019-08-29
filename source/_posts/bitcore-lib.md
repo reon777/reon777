@@ -31,7 +31,8 @@ npm install bitcore-lib
 import bitcore from 'bitcore-lib'
 ```
 
-ビットコインアドレスを生成する
+### ビットコインアドレスを生成する
+
 hoge.vue の created などの部分に以下のコードを挿入する
 
 ```js
@@ -51,6 +52,10 @@ export default {
   }
 }
 ```
+
+### 参考
+
+[ビットコインのアドレス生成の仕方](https://qiita.com/you21979@github/items/5d3bd71ae2107d03973a)
 
 ### おわりに
 
