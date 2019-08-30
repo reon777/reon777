@@ -91,8 +91,8 @@ export default {
   },
   destroyed() {
     document.querySelector('body').classList.remove('transparent-body')
+    // androidはdestroyするとレイアウト不具合になったので対象はiosだけにしている
     if (cordova.platformId == 'ios') {
-      // androidでこの処理があるとレイアウト不具合になった
       QRScanner.destroy(function(status) {
         console.log(status)
       })
