@@ -1,0 +1,62 @@
+---
+date: 2019-09-06
+tags:
+  - cordova
+title: 【cordova-plugin-splashscreen】スプラッシュスクリーンの設定方法
+---
+
+{% asset_img images.jpeg %}
+
+### はじめに
+
+cordova-plugin-splashscreen プラグインを利用したスプラッシュスクリーンの設定方法をメモしておきます。
+プラグインを使うことで全ての画面サイズに自動的に対応してくれるので便利です
+これまで手動対応してましたが iPhone XR でレイアウトがズレてて追加するのが面倒だったのでプラグインにしたらすごく楽になりました
+この記事では ios だけ記載してますが android も設定可能です
+
+<!-- more -->
+
+### 利用プラグイン
+
+https://www.npmjs.com/package/cordova-plugin-splashscreen
+
+### インストール
+
+```bash
+cordova plugin add cordova-plugin-splashscreen
+```
+
+### 画像配置
+
+platforms や plugins や www フォルダと同列ディレクトリに res フォルダを作成
+res フォルダ配下に ios フォルダを作成
+
+ios フォルダに以下の６つのスプラッシュ画像を置く
+
+| no  | 横サイズ | 縦サイズ | ファイル名                      |
+| --- | -------- | -------- | ------------------------------- |
+| 1   | 2732     | 2732     | Default@2x~universal~anyany.png |
+| 2   | 1278     | 2732     | Default@2x~universal~comany.png |
+| 3   | 1334     | 750      | Default@2x~universal~comcom.png |
+| 4   | 2208     | 2208     | Default@3x~universal~anyany.png |
+| 5   | 2208     | 1242     | Default@3x~universal~anycom.png |
+| 6   | 1242     | 2208     | Default@3x~universal~comany.png |
+
+### ファイル読み込み設定
+
+```xml
+<widget>
+  <platform name="ios">
+      <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+      <splash src="res/screen/ios/Default@2x~universal~comany.png" />
+      <splash src="res/screen/ios/Default@2x~universal~comcom.png" />
+      <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
+      <splash src="res/screen/ios/Default@3x~universal~anycom.png" />
+      <splash src="res/screen/ios/Default@3x~universal~comany.png" />
+  </platform>
+</widget>
+```
+
+あとは普通にビルドしたら自動的にいい感じの画像サイズが適用されてます
+
+以上です。
