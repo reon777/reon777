@@ -1,0 +1,162 @@
+---
+date: 2019-09-19
+tags:
+  - cordova
+  - FCM
+title: 【cordova】プッシュ通知を実装してみた【FCM】
+---
+
+{% asset_img firebase.png %}
+
+### はじめに
+
+cordova にプッシュ通知機能を実装したので手順をメモしておきます。
+
+<!-- more -->
+
+### 環境
+
+- cordova-plugin-fcm-with-dependecy-updated: 3.2.0
+- cordova-ios: 4.5.5
+- cordova-android: 7.1.4
+
+### 準備
+
+- ios は GoogleService-Info.plist
+- android は google-services.json
+  が必要です。
+
+以下のページを参考にして取得してから cordova ルートフォルダに置いてください。
+https://firebase.google.com/docs/ios/setup
+
+#### 【ios】設定追加
+
+GoogleService-Info.plist に以下の２行を追加する
+
+```xml
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false></false>
+```
+
+#### 【ios】Provisioning Profile 作成
+
+- 以下のページにアクセス
+  https://developer.apple.com/account/resources/identifiers/list
+- Push Notifications を有効にする
+- Configure ボタンを押す
+- プッシュ通知用の Certificate を２つ作成・設定する
+- Provisioning Profile を新しく作成して利用する
+
+#### 【ios】サーバ登録用の証明書ファイル作成
+
+以下の URL にアクセス
+https://developer.apple.com/account/resources/authkeys/list
+`Apple Push Notifications service (APNs)`にチェックを入れる
+〜〜.p8 ファイルをダウンロードして firebase に登録する
+参考手順
+https://diary.shuichi.tech/entry/2018/07/09/221502
+
+#### 【android】アプリ ID が一致しているかを確認
+
+- 対象エラー
+  `> No matching client found for package name 'com.hoge'`
+
+- 修正方法
+  config.xml の`<widget id="com.hoge"`と
+  google-services.json の
+
+```
+{
+  "project_info": {
+  },
+  "client": [
+    {
+      "client_info": {
+        "android_client_info": {
+          "package_name": "com.hoge"
+        }
+      },
+```
+
+の `com.hoge` の部分が一致していないとビルド時に以下のエラーになるので一致しているか確認しておく
+
+ちなみに僕はここに`-`を使っていたらエラーになりました
+
+### ライブラリインストール
+
+<!-- 公式サイト -->
+
+https://www.npmjs.com/package/cordova-plugin-fcm-with-dependecy-updated
+
+```bash
+cordova plugin add cordova-plugin-fcm-with-dependecy-updated
+```
+
+ちなみに元の公式サイトはこっち
+https://github.com/fechanique/cordova-plugin-fcm
+
+なのですが、こちらはバグがあって上のサイトがその修正バージョンです
+
+### 【ios】準備
+
+cordova ルートフォルダで
+`sudo gem install cocoapods` で CocoaPods をインストールする
+
+`pod setup`
+15 分ほど待つ
+
+今後 XCODE を開く際は/platforms/ios/ 配下の .xcodeproj ファイルではなく .xcodeworkspace ファイルを選択して XCode を開く
+
+Capabilities タブで Push Notifications と Background Modes を ON にして Remote Notifications にチェックを入れておく。
+
+参考
+http://neos21.hatenablog.com/entry/2017/12/24/080000
+
+### プッシュ機能を実装
+
+```js
+ register_push() {
+      const self = this;
+      console.log("start register_push");
+      // 1秒後にトークンを取得する
+      // 待たないとFCMPluginにアクセスできない
+      // devicereadyだとだめだった
+      window.setTimeout(() => {
+        // tokenを取得してサーバに投げる
+        FCMPlugin.getToken(
+          fcm_token => {
+            if (fcm_token == null) {
+              FCMPlugin.onTokenRefresh(fcm_token => {
+                console.log(
+                  "[onTokenRefresh]fcm_token: " + JSON.stringify(fcm_token)
+                );
+                self.send_to_server(fcm_token);
+              });
+            } else {
+              console.log("[getToken]fcm_token: " + JSON.stringify(fcm_token));
+              self.send_to_server(fcm_token);
+            }
+          },
+          err => {
+            console.log("[getToken]err: " + JSON.stringify(err));
+          }
+        );
+        // プッシュを待ち受ける処理
+        // eslint-disable-next-line
+        FCMPlugin.onNotification(data => {
+          console.log("[onNotification]data: " + JSON.stringify(data));
+          alert(JSON.stringify(data));
+        });
+      }, 1000);
+    },
+```
+
+### おわりに
+
+最初修正バージョンのライブラリがあることを知らなくてめちゃくちゃハマって大変でした、、
+
+プッシュ出来ると良い感じのアプリっぽくなって良いですよね〜（語彙力
+
+ではよきプッシュ通知ライフを〜。
+
+以上です
