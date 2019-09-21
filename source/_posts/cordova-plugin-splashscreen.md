@@ -28,10 +28,7 @@ cordova plugin add cordova-plugin-splashscreen
 
 ### 画像配置
 
-platforms や plugins や www フォルダと同列ディレクトリに res フォルダを作成
-res フォルダ配下に ios フォルダを作成
-
-ios フォルダに以下の６つのスプラッシュ画像を置く
+src-cordova/res/screen/ios フォルダに以下の６つのスプラッシュ画像を置く
 
 | no  | 横サイズ | 縦サイズ | ファイル名                      |
 | --- | -------- | -------- | ------------------------------- |
@@ -43,6 +40,8 @@ ios フォルダに以下の６つのスプラッシュ画像を置く
 | 6   | 1242     | 2208     | Default@3x~universal~comany.png |
 
 ### ファイル読み込み設定
+
+config.xml に以下を追加
 
 ```xml
 <widget>

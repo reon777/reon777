@@ -56,7 +56,8 @@ config.xml に以下を追加
 
 ### 【android】準備２
 
-config.xml の以下の行を削除
+26 で動かしたかったので config.xml の以下の行を削除
+動きました（いいのか？）
 
 ```xml
 <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
@@ -113,7 +114,5 @@ js のコード
 
 - targetWidth と targetHeight のどちらか一方の指定だけだと変更なしになる
 - targetWidth と targetHeight の小さい方に合わせられる。縦横比率は維持。大きい方のサイズ指定は無視される。
-
-### おわりに
 
 以上です。
