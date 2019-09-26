@@ -1,8 +1,7 @@
 ---
 date: 2019-09-26
 tags:
-  - bitcoin
-  - js
+  - vue
 title: 【Vue.js】後ろの要素のクリックイベントを発生させないようにする方法
 ---
 
