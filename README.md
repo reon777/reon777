@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "click-stop"
+hexo new "vue-coreova-error"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
 ```
