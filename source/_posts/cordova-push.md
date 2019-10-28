@@ -49,17 +49,15 @@ GoogleService-Info.plist に以下の２行を追加する
 
 #### 【ios】サーバ登録用の証明書ファイル作成
 
-以下の URL にアクセス
-https://developer.apple.com/account/resources/authkeys/list
-`Apple Push Notifications service (APNs)`にチェックを入れる
-〜〜.p8 ファイルをダウンロードして firebase に登録する
-参考手順
-https://diary.shuichi.tech/entry/2018/07/09/221502
+以下の中から対象の Identifiers を開き、Push Notifications にチェックを入れて Save する
+https://developer.apple.com/account/resources/identifiers/list
+
+プッシュ用の証明書を作成する
+以下を参考にして p8 ファイルをダウンロードして firebase に登録する
+p8 ファイルは複数アプリで使い回し可能
+https://qiita.com/matsuyoro/items/77408e5d09ef00be8577
 
 #### 【android】アプリ ID が一致しているかを確認
-
-- 対象エラー
-  `> No matching client found for package name 'com.hoge'`
 
 - 修正方法
   config.xml の`<widget id="com.hoge"`と
@@ -79,6 +77,9 @@ https://diary.shuichi.tech/entry/2018/07/09/221502
 ```
 
 の `com.hoge` の部分が一致していないとビルド時に以下のエラーになるので一致しているか確認しておく
+
+- 対象エラー
+  `> No matching client found for package name 'com.hoge'`
 
 ちなみに僕はここに`-`を使っていたらエラーになりました
 
@@ -101,6 +102,7 @@ https://github.com/fechanique/cordova-plugin-fcm
 
 cordova ルートフォルダで
 `sudo gem install cocoapods` で CocoaPods をインストールする
+sudo なので Mac の管理者ログインパスワードを入力する
 
 `pod setup`
 15 分ほど待つ
