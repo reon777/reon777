@@ -5,7 +5,7 @@ tags:
 title: 【cordova】iPhone X レイアウト対応
 ---
 
-{% asset_img bitcoin.png %}
+{% asset_img cordova.jpeg %}
 
 ### はじめに
 
