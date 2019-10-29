@@ -40,12 +40,12 @@ GoogleService-Info.plist に以下の２行を追加する
 
 #### 【ios】Provisioning Profile 作成
 
-- 以下のページにアクセス
+- 以下のページから対象のアプリを選択する
   https://developer.apple.com/account/resources/identifiers/list
 - Push Notifications を有効にする
 - Configure ボタンを押す
 - プッシュ通知用の Certificate を２つ作成・設定する
-- Provisioning Profile を新しく作成して利用する
+- Provisioning Profile を新しく作成して XCode で利用する
 
 #### 【ios】サーバ登録用の証明書ファイル作成
 
@@ -113,10 +113,28 @@ sudo なので Mac の管理者ログインパスワードを入力する
 
 今後 XCODE を開く際は/platforms/ios/ 配下の .xcodeproj ファイルではなく .xcodeworkspace ファイルを選択して XCode を開く
 
+### 【ios】Xcode 設定
+
 Capabilities タブで Push Notifications と Background Modes を ON にして Remote Notifications にチェックを入れておく。
 
-参考
-http://neos21.hatenablog.com/entry/2017/12/24/080000
+XCode > File > Project Settings... > Build System > Legacy Build System を選択してから再ビルドする
+参考：https://github.com/fechanique/cordova-plugin-fcm/issues/553
+これをしないとプッシュが届かない
+
+以下のエラーが出るようになるけど無視で OK
+問題なくプッシュは届きます
+
+```bash
+** ARCHIVE SUCCEEDED **
+
+2019-10-29 13:25:02.969 xcodebuild[93448:11795563] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path '/var/folders/pw/29ylxmln7bq5nr29qj8djh940000gn/T/hoge_2019-10-29_13-25-02.968.xcdistributionlogs'.
+error: exportArchive: "hoge" requires a provisioning profile with the Push Notifications feature.
+
+Error Domain=IDEProvisioningErrorDomain Code=9 ""hoge" requires a provisioning profile with the Push Notifications feature." UserInfo={NSLocalizedDescription="hoge" requires a provisioning profile with the Push Notifications feature., NSLocalizedRecoverySuggestion=Add a profile to the "provisioningProfiles" dictionary in your Export Options property list.}
+
+** EXPORT FAILED **
+
+```
 
 ### プッシュ機能を実装
 
@@ -156,6 +174,10 @@ http://neos21.hatenablog.com/entry/2017/12/24/080000
       }, 1000);
     },
 ```
+
+### 参考
+
+[Cordova iOS アプリ + phonegap-plugin-push でリモートプッシュ通知機能を実装するための全工程](http://neos21.hatenablog.com/entry/2017/12/24/080000)
 
 ### おわりに
 
