@@ -175,6 +175,33 @@ Error Domain=IDEProvisioningErrorDomain Code=9 ""hoge" requires a provisioning p
     },
 ```
 
+### ビルド
+
+hoge の部分はアプリ名に変えてください
+
+#### ios
+
+```bash
+# plist配置
+mkdir platforms/ios/hoge/Resources/Resources
+cp GoogleService-Info.plist platforms/ios/hoge/Resources/GoogleService-Info.plist
+cp platforms/ios/hoge/Resources/GoogleService-Info.plist platforms/ios/hoge/Resources/Resources/GoogleService-Info.plist
+# ビルド
+cordova build ios
+```
+
+#### android
+
+```bash
+# google-services.json配置
+cp google-services.json platforms/android/google-services.json
+cp platforms/android/google-services.json platforms/android/app/google-services.json
+mkdir platforms/android/app/src/release
+cp platforms/android/google-services.json platforms/android/app/src/release/google-services.json
+# ビルド
+cordova build android  --release
+```
+
 ### 参考
 
 [Cordova iOS アプリ + phonegap-plugin-push でリモートプッシュ通知機能を実装するための全工程](http://neos21.hatenablog.com/entry/2017/12/24/080000)
