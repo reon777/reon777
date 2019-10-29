@@ -90,8 +90,12 @@ https://qiita.com/matsuyoro/items/77408e5d09ef00be8577
 https://www.npmjs.com/package/cordova-plugin-fcm-with-dependecy-updated
 
 ```bash
-cordova plugin add cordova-plugin-fcm-with-dependecy-updated
+cordova plugin add cordova-plugin-fcm-with-dependecy-updated@3.2.0
 ```
+
+※2019/10/29 時点で最新版は 4.1.0 ですがこれだと
+FCMPlugin is not defined
+のエラーになったので 3.2.0 版を指定してます
 
 ちなみに元の公式サイトはこっち
 https://github.com/fechanique/cordova-plugin-fcm
