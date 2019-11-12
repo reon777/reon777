@@ -62,47 +62,49 @@ vue のコードですが js の部分を抜き出せば他のフレームワー
 export default {
   mounted() {
     // カメラプレビューを有効にするために背景を透明にする
-    document.querySelector('body').classList.add('transparent-body')
-    QRScanner.prepare(this.onDone) // show the prompt
+    document.querySelector("html").classList.add("transparent-body");
+    document.querySelector("body").classList.add("transparent-body");
+    QRScanner.prepare(this.onDone); // show the prompt
   },
   methods: {
     // カメラ利用の許可を要求
     onDone(err, status) {
       if (err) {
-        console.log('err: ' + err)
-        this.$router.go(-1)
+        console.log("err: " + err);
+        this.$router.go(-1);
       }
       // カメラ利用の許可を受けた後の処理
       if (status.authorized) {
-        QRScanner.scan(this.displayContents)
-        QRScanner.show()
+        QRScanner.scan(this.displayContents);
+        QRScanner.show();
       } else {
-        this.$router.go(-1)
+        this.$router.go(-1);
       }
     },
     // QRコード読み取り後の処理
     displayContents(err, text) {
       if (err) {
-        console.log('err: ' + err)
+        console.log("err: " + err);
       } else {
-        console.log('text: ' + text)
+        console.log("text: " + text);
       }
     }
   },
   destroyed() {
-    document.querySelector('body').classList.remove('transparent-body')
+    document.querySelector("html").classList.remove("transparent-body");
+    document.querySelector("body").classList.remove("transparent-body");
     // androidはdestroyするとレイアウト不具合になったので対象はiosだけにしている
-    if (cordova.platformId == 'ios') {
+    if (cordova.platformId == "ios") {
       QRScanner.destroy(function(status) {
-        console.log(status)
-      })
+        console.log(status);
+      });
       // 以下はライブリバグ対応（参考：https://github.com/bitpay/cordova-plugin-qrscanner/issues/234）
       setTimeout(() => {
-        window.document.body.style.backgroundColor = ''
-      }, 500)
+        window.document.body.style.backgroundColor = "";
+      }, 500);
     }
   }
-}
+};
 ```
 
 ### css
