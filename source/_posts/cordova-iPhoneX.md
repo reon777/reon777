@@ -13,7 +13,7 @@ title: 【cordova】iPhone X レイアウト対応
 
 <!-- more -->
 
-### 修正１
+### 修正１（上下の白い余白を削除する）
 
 index.html に以下の meta タグを追加する
 
@@ -27,16 +27,20 @@ index.html に以下の meta タグを追加する
 </head>
 ```
 
-### 修正２
+ちなみに僕はここで無駄にめちゃくちゃハマって数日無駄にしてしまったのですが、もしすでに
+`<meta name="viewport" content="width=device-width,initial-scale=1.0" />`
+の記述がすでに inde.html に存在している場合はちゃんと削除して追加（＝上書き）してください。
+僕はその存在に気付かずにただ単に追加してしまい、うまく追加が効かなくてひたすらハマりました、、
 
-plist ファイルに以下を追加する
+### 修正２（まだ残っている余白を削除する）
 
-```
-	<key>UILaunchStoryboardName</key>
-	<string>CDVLaunchScreen</string>
-```
+以下の設定を行うことでスプラッシュスクリーンだけでなく、通常の画面についてもフルスクリーンになる
 
-### 修正３
+[スプラッシュスクリーンの設定方法](/2019/09/06/cordova-plugin-splashscreen/)
+
+### 修正３（重なりを避ける）
+
+そのままだとフルスクリーンになりすぎて上下で画面の端が見切れてしまうので以下の対応を行い、見切れないようにする
 
 css に以下を追加する
 
@@ -47,11 +51,9 @@ body {
 }
 ```
 
-### 修正４
+### 参考
 
-以下の設定を行う
-
-[スプラッシュスクリーンの設定方法](/2019/09/06/cordova-plugin-splashscreen/)
+https://blog.phonegap.com/displaying-a-phonegap-app-correctly-on-the-iphone-x-c4a85664c493
 
 ### おわりに
 
