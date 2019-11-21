@@ -6,7 +6,7 @@ https://reon777.com
 ## 利用技術
 
 | Key            | Value          |
-| :------------- | :------------- |
+|:---------------|:---------------|
 | フレームワーク | Hexo           |
 | Hosting        | Netlify        |
 | ドメイン       | Route53 at AWS |
@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "deviceready_has_not_fired_after_5_seconds."
+hexo new "touch-action"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
 ```
