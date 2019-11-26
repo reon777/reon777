@@ -1,7 +1,7 @@
 ---
 title: cordovaのiosでinputタグのタッチ反応が悪い時の解決策
 tags:
-  - cordova
+  - Cordova
 date: 2019-05-16
 ---
 

@@ -1,7 +1,7 @@
 ---
 date: 2019-11-19
 tags:
-  - cordova
+  - Cordova
 title: 【cordova】deviceready has not fired after 5 seconds.
 ---
 

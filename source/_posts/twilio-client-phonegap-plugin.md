@@ -1,9 +1,9 @@
 ---
-tags:
-  - cordova
-  - twilio
-date: 2019-06-13
 title: 【Cordova】twilio-client-phonegap-pluginのインストールでハマったのでメモ
+date: 2019-06-13
+tags:
+  - Cordova
+  - twilio
 ---
 
 ## 環境

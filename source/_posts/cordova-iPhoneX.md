@@ -1,7 +1,7 @@
 ---
 date: 2019-10-28
 tags:
-  - cordova
+  - Cordova
 title: 【cordova】iPhone X レイアウト対応
 ---
 

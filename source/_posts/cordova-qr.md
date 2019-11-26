@@ -1,7 +1,7 @@
 ---
 date: 2019-08-23
 tags:
-  - cordova
+  - Cordova
 title: 【Cordova】QRコード読み取りを実装してみた
 ---
 

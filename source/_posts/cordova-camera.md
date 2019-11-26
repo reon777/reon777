@@ -1,7 +1,7 @@
 ---
 date: 2019-09-20
 tags:
-  - cordova
+  - Cordova
 title: 【cordova】写真・カメラ機能を使ってみた【写真】
 ---
 

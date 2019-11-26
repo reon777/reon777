@@ -1,7 +1,7 @@
 ---
 title: 「FCMPlugin is not defined」エラーの解決策
 tags:
-  - cordova
+  - Cordova
 date: 2019-05-15
 ---
 

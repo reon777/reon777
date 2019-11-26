@@ -1,7 +1,7 @@
 ---
 date: 2019-07-05
 tags:
-  - cordova
+  - Cordova
   - facebook
 title: cordovaでfacebookログインを実装してみた
 ---

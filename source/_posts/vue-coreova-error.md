@@ -1,9 +1,9 @@
 ---
+title: 【node-forge】Maximum call stack size exceededエラーの原因【vue-i18n】
 date: 2019-10-1
 tags:
   - vue
-  - coreova
-title: 【node-forge】Maximum call stack size exceededエラーの原因【vue-i18n】
+  - Cordova
 ---
 
 {% asset_img cordova.jpeg %}

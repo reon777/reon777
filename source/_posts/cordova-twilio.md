@@ -1,9 +1,9 @@
 ---
+title: CordovaでTwilio通話をやろうとしたけど挫折したメモ
 date: 2019-06-20
 tags:
-  - cordova
+  - Cordova
   - twilio
-title: CordovaでTwilio通話をやろうとしたけど挫折したメモ
 ---
 
 ## はじめに

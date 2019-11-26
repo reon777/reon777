@@ -1,7 +1,7 @@
 ---
 date: 2019-09-19
 tags:
-  - cordova
+  - Cordova
   - FCM
 title: 【cordova】プッシュ通知を実装してみた【FCM】
 ---

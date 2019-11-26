@@ -1,7 +1,7 @@
 ---
 date: 2019-09-21
 tags:
-  - cordova
+  - Cordova
 title: 【cordova】アイコン画像の設定方法
 ---
 

@@ -1,8 +1,8 @@
 ---
+title: 【cordova-plugin-splashscreen】スプラッシュスクリーンの設定方法
 date: 2019-09-06
 tags:
-  - cordova
-title: 【cordova-plugin-splashscreen】スプラッシュスクリーンの設定方法
+  - Cordova
 ---
 
 {% asset_img images.jpeg %}
@@ -29,14 +29,14 @@ cordova plugin add cordova-plugin-splashscreen
 
 src-cordova/res/screen フォルダに以下の６つのスプラッシュ画像を置く
 
-| no  | 横サイズ | 縦サイズ | ファイル名                      |
-| --- | -------- | -------- | ------------------------------- |
-| 1   | 2732     | 2732     | Default@2x~universal~anyany.png |
-| 2   | 1278     | 2732     | Default@2x~universal~comany.png |
-| 3   | 1334     | 750      | Default@2x~universal~comcom.png |
-| 4   | 2208     | 2208     | Default@3x~universal~anyany.png |
-| 5   | 2208     | 1242     | Default@3x~universal~anycom.png |
-| 6   | 1242     | 2208     | Default@3x~universal~comany.png |
+| no | 横サイズ | 縦サイズ | ファイル名                      |
+|----|----------|----------|---------------------------------|
+| 1  | 2732     | 2732     | Default@2x~universal~anyany.png |
+| 2  | 1278     | 2732     | Default@2x~universal~comany.png |
+| 3  | 1334     | 750      | Default@2x~universal~comcom.png |
+| 4  | 2208     | 2208     | Default@3x~universal~anyany.png |
+| 5  | 2208     | 1242     | Default@3x~universal~anycom.png |
+| 6  | 1242     | 2208     | Default@3x~universal~comany.png |
 
 ### ファイル読み込み設定
 

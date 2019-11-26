@@ -1,7 +1,7 @@
 ---
 date: 2019-10-11
 tags:
-  - cordova
+  - Cordova
 title: 【cordova-plugin-file】内部ストレージを使ってみた【Vue】
 ---
 
