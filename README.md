@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "cordova-error-Gradle-version"
+hexo new "ionic-error-ERR_CONNECTION_REFUSED"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
 ```

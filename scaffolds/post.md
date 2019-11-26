@@ -1,61 +1,31 @@
 ---
-date: 2019-08-
+date: 2019-11-26
 tags:
-  - bitcoin
-  - js
-title: 【Vue.js】ビットコインを生成・送金してみた
+  - Cordova
+title: 【Cordova】Minimum supported Gradle version is 4.10.1. Current version is 4.6.
 ---
 
-{% asset_img bitcoin.png %}
+{% asset_img cordova.jpeg %}
 
 ### はじめに
 
-Vue プロジェクトでビットコインを生成・送金したので手順をメモしておきます。
+CordovaプロジェクトでAndroidのビルド時に表題のエラーになったので解決策をメモしておきます
 
-<!-- more -->
+### エラー内容
 
-### 環境
+Minimum supported Gradle version is 4.10.1. Current version is 4.6.
 
-- bitcore-lib: 8.5.1
-- bitcore-explorers: 1.0.1
+### 修正ファイル
 
-### ライブラリインストール
+platforms/android/gradle/wrapper/gradle-wrapper.properties
+
+#### 修正内容
 
 ```bash
-npm install bitcore-lib
-npm install bitcore-explorers
+# 修正前
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
+# 修正前
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.1-all.zip
 ```
 
-### ビットコインアドレスを生成する
-
-hoge.vue の created などの部分に以下のコードを挿入する
-
-```js
-export default {
-  created() {
-    //秘密鍵の生成
-    var private_key = new bitcore.PrivateKey('livenet')
-    console.log('秘密鍵 : ' + private_key.toString())
-
-    //公開鍵
-    var public_key = private_key.toPublicKey()
-    console.log('公開鍵：' + public_key.toString())
-
-    //アドレス
-    var address = public_key.toAddress()
-    console.log('アドレス：' + address.toString())
-  }
-}
-```
-
-### 参考
-
-[Bitcore でビットコインを送金してみる](https://qiita.com/oggata/items/40c952955f5d31c13452)
-
-https://www.edureka.co/community/11639/how-to-solve-more-than-one-instance-of-bitcore-lib-found-error
-
-### おわりに
-
-思ったより簡単でびっくりしました
-
-以上です。
+修正後、Android Studio > Build > Clean ProjectしてからAndroid Studioを開きなおすと正常にビルドされました
