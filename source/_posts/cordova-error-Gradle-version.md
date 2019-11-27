@@ -28,4 +28,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.1-all.zip
 ```
 
-修正後、Android Studio > Build > Clean ProjectしてからAndroid Studioを開きなおすと正常にビルドされました
+修正後、Android Studio > Build > Make Projectを押下する
