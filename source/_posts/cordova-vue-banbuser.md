@@ -1,7 +1,7 @@
 ---
 tags:
   - Cordova
-title: 【Cordova】ライブ配信アプリを作ってみた
+title: 【Cordova】ライブ配信の実装方法
 date: 2019-11-27
 ---
 
@@ -9,7 +9,7 @@ date: 2019-11-27
 
 ### はじめに
 
-Cordovaを使ってライブ配信アプリを作ってみたので作り方をメモしてます
+Cordovaを使ってライブ配信のサンプルアプリを作ってみました
 
 完成系はこちら
 https://github.com/reon777/sample_vue_cordova_banbuser
