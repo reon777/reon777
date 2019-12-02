@@ -1,7 +1,6 @@
 ---
 date: 2019-07-29
 tags:
-  - bootstrap-vue
   - Vue
 title: 【Vue】「$attrs is readonly.」エラーの解決策
 ---

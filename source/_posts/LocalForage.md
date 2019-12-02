@@ -1,7 +1,7 @@
 ---
 date: 2019-10-10
 tags:
-  - LocalForage
+  - Vue
 title: 【Vue.js】LocalForageを導入してみた
 ---
 

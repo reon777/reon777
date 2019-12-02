@@ -2,7 +2,6 @@
 date: 2019-07-04
 tags:
   - XCode
-  - ios
 title: XCodeとiosのバージョンエラーでハマったので解決手順をメモ
 ---
 

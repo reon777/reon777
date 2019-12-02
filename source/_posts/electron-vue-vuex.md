@@ -1,7 +1,7 @@
 ---
 date: 2019-07-24
 tags:
-  - electron-vue
+  - Vue
 title: electron-vueのテンプレートのvuexの初期エラーの解決策
 ---
 
