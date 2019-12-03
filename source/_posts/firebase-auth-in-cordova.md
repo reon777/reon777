@@ -72,3 +72,14 @@ sudo なので Mac の管理者ログインパスワードを入力する
 
 以上の３つで問題なく認証機能が使えるようになりました！
 参考になれば幸いです
+
+### おまけ
+
+ちなみに僕は公式ドキュメントの以下の部分のURL_SCHEMEを変更せずにそのまま実行していて
+iosでアドレスが無効で開けないエラーでハマったので注意してください
+
+```bash
+cordova plugin add cordova-plugin-customurlscheme --variable \
+    URL_SCHEME=com.firebase.cordova --save
+```
+
