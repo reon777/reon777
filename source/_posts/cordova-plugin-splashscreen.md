@@ -44,12 +44,14 @@ config.xml に以下を追加
 
 ```xml
 <widget>
+    ...
     <splash src="res/screen/Default@2x~universal~anyany.png" />
     <splash src="res/screen/Default@2x~universal~comany.png" />
     <splash src="res/screen/Default@2x~universal~comcom.png" />
     <splash src="res/screen/Default@3x~universal~anyany.png" />
     <splash src="res/screen/Default@3x~universal~anycom.png" />
     <splash src="res/screen/Default@3x~universal~comany.png" />
+    ...
 </widget>
 ```
 
