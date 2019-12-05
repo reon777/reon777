@@ -46,14 +46,17 @@ css に以下を追加する
 
 ```css
 body {
-  padding-top: constant(safe-area-inset-top);
-  padding-top: env(safe-area-inset-top);
+  padding-top: 44px;
+  /* 以下を使うという記事もあるが、cordovaだと効かない */
+  /* padding-top: constant(safe-area-inset-top); */
+  /* padding-top: env(safe-area-inset-top); */
 }
 ```
 
 ### 参考
 
 https://blog.phonegap.com/displaying-a-phonegap-app-correctly-on-the-iphone-x-c4a85664c493
+https://qiita.com/keeey/items/c175bd8ef12ee65ac3fc
 
 ### おわりに
 
