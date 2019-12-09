@@ -1,8 +1,8 @@
 ---
+title: 【Cordova】Minimum supported Gradle version is 4.10.1. Current version is 4.6.
 date: 2019-11-26
 tags:
   - Cordova
-title: 【Cordova】Minimum supported Gradle version is 4.10.1. Current version is 4.6.
 ---
 
 {% asset_img cordova.jpeg %}
