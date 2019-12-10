@@ -11,6 +11,7 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
+  - google_search
   - category
   - tag
   - tagcloud
