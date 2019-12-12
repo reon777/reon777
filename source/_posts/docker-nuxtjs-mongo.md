@@ -20,9 +20,9 @@ DockerComposeでNuxt.jsとMongoDBを構築したので手順をメモ
 以下の通り
 https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
 
-### Amazon Linuxの場合
+#### Amazon Linuxの場合
 
-#### Dockerインストール
+##### Dockerインストール
 
 ```bash
 sudo yum update -y
@@ -32,7 +32,7 @@ sudo usermod -a -G docker ec2-user
 docker --version
 ```
 
-#### Docker Composeインストール
+##### Docker Composeインストール
 ```bash
 sudo curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
