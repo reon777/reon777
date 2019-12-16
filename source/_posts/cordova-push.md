@@ -46,11 +46,9 @@ GoogleService-Info.plist に以下の２行を追加する
 - Configure ボタンを押す
 - プッシュ通知用の Certificate を２つ作成・設定する
 - Provisioning Profile を新しく作成して XCode で利用する
+- Saveボタンを押して保存する
 
 #### 【ios】サーバ登録用の証明書ファイル作成
-
-以下の中から対象の Identifiers を開き、Push Notifications にチェックを入れて Save する
-https://developer.apple.com/account/resources/identifiers/list
 
 プッシュ用の証明書を作成する
 以下を参考にして p8 ファイルをダウンロードして firebase に登録する
