@@ -19,6 +19,27 @@ https://github.com/willmcpo/body-scroll-lock
 Vueならこっちですね
 https://github.com/phegman/v-scroll-lock
 
+
+```bash
+npm install v-scroll-lock 
+```
+
+でインストールして、
+
+```js
+import VScrollLock from 'v-scroll-lock'
+Vue.use(VScrollLock)
+```
+
+すると全画面でスクロールが無効になります
+で、スクロールさせたい要素だけ
+
+```html
+<div v-scroll-lock="true">
+```
+
+のようにするとこの要素だけはスクロールできるようになります
+
 ### 以下、原文
 
 普通スクロール禁止といえば以下を使うのだと思いますが、
