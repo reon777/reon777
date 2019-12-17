@@ -48,7 +48,11 @@ android だと以下のコマンドが必要でした
 # 移動先にデフォルトアイコンがあれば削除する
 find platforms/android/app/src/main/res -type f -name "icon.png" -delete
 find platforms/android/app/src/main/res -type f -name "screen.png" -delete
+rm -r platforms/ios/RON/Images.xcassets/LaunchImage.launchimage/*.png
+rm -r platforms/ios/RON/Images.xcassets/AppIcon.appiconset/*.png
+rm -r platforms/ios/RON/Images.xcassets/LaunchStoryboard.imageset/*.png
 # アイコン配置
+# cordova-icon --icon=icon.jpg こうすれば画像の名前を指定も可能
 cordova-icon
 # 上のコマンドのアイコンの作成箇所がおかしいので移動する
 cp -rf platforms/android/res/* platforms/android/app/src/main/res/
