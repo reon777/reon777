@@ -133,5 +133,5 @@ https://aidemy.net/courses/2010/exercises/HJWxt3UiUxz
 色々と具体的で、実際に機械学習bot作るときに参考になる話ばかりで面白かった！
 
 
-第４章はこちら（執筆中）
+第４章は[こちら](/2019/12/17/Finance-machine-learning-4)
 
