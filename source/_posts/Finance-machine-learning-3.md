@@ -16,8 +16,8 @@ tags:
 せっかくなので内容を忘れないようにメモしていこうと思います
 超ざっくり要約と一言感想的な感じで
 
-第１章は[こちら](/2019/12/09/Finance-machine-learning-1)
-第２章は[こちら](/2019/12/15/Finance-machine-learning-2)
+第１章は[こちら](/2019/12/09/finance-machine-learning-1)
+第２章は[こちら](/2019/12/15/finance-machine-learning-2)
 
 <!-- more -->
 
@@ -133,5 +133,5 @@ https://aidemy.net/courses/2010/exercises/HJWxt3UiUxz
 色々と具体的で、実際に機械学習bot作るときに参考になる話ばかりで面白かった！
 
 
-第４章は[こちら](/2019/12/17/Finance-machine-learning-4)
+第４章は[こちら](/2019/12/17/finance-machine-learning-4)
 

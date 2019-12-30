@@ -1,8 +1,8 @@
 ---
-title: Docker ComposeでmongoDBを構築したら権限エラーでハマった
+title: Docker ComposeでMongoDBを構築したら権限エラーでハマった
 tags:
   - Docker
-  - mongoDB
+  - MongoDB
 date: 2019-12-23
 ---
 
@@ -10,7 +10,7 @@ date: 2019-12-23
 
 # はじめに
 
-Docker ComposeでmongoDBを構築したら権限エラーでハマったので解決策をメモしておきます
+Docker ComposeでMongoDBを構築したら権限エラーでハマったので解決策をメモしておきます
 
 <!-- more -->
 

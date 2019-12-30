@@ -16,8 +16,8 @@ tags:
 せっかくなので内容を忘れないようにメモしていこうと思います
 超ざっくり要約と一言感想的な感じで
 
-第１章は[こちら](/2019/12/09/Finance-machine-learning-1)
-第３章は[こちら](/2019/12/16/Finance-machine-learning-3)
+第１章は[こちら](/2019/12/09/finance-machine-learning-1)
+第３章は[こちら](/2019/12/16/finance-machine-learning-3)
 
 <!-- more -->
 
@@ -151,5 +151,5 @@ tags:
 最初の１回読んだだけだとほとんど意味が分からなかったw
 もっと全体的に具体例が欲しいんだよなあ
 
-第５章は[こちら](/2019/12/18/Finance-machine-learning-5)
+第５章は[こちら](/2019/12/18/finance-machine-learning-5)
 
