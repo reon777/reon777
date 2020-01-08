@@ -47,3 +47,7 @@ tags:
 
 第１２章はこちら（執筆中）
 
+**2020/1/8 追記**
+以下の理由により、一旦ストップします
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ファイナンス機械学習、早くアウトプットしたくなってきたので一旦読むの止める<br><br>実際に色々やってみて、自分で考えて、悩んで、それからまた読み直した方がいいわ</p>&mdash; reon777 (@reo3313) <a href="https://twitter.com/reo3313/status/1214823174350655489?ref_src=twsrc%5Etfw">January 8, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "mongo-projection-not-working"
+hexo new "You_must_be_an_Admin_or_Technical_user_in_order_to_deliver_content_or_metadata"
 hexo new draft "bitflyer_profit_20190430"
 hexo publish "bitflyer_profit_20190430"
 ```
