@@ -42,6 +42,7 @@ GoogleService-Info.plist に以下の２行を追加する
 
 - 以下のページから対象のアプリを選択する
   https://developer.apple.com/account/resources/identifiers/list
+  ※UIが古いけど慌てない。やることは同じ。まずは左のKeysを押そう。
 - Push Notifications を有効にする
 - Configure ボタンを押す
 - プッシュ通知用の Certificate を２つ作成・設定する
