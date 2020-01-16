@@ -1,6 +1,9 @@
 ---
 title: 【Cordova】Minimum supported Gradle version is 4.10.1. Current version is 4.6.
-date: 2019-11-26
+date: 2020-01-01
+categories:
+  - コーディング
+  - バージョン管理
 tags:
   - Cordova
 ---
@@ -9,7 +12,7 @@ tags:
 
 ### はじめに
 
-CordovaプロジェクトでAndroidのビルド時に表題のエラーになったので解決策をメモしておきます
+Cordova プロジェクトで Android のビルド時に表題のエラーになったので解決策をメモしておきます
 
 ### エラー内容
 
@@ -28,4 +31,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.1-all.zip
 ```
 
-修正後、Android Studio > Build > Clean ProjectしてからAndroid Studioを開きなおすと正常にビルドされました
+修正後、Android Studio > Build > Clean Project してから Android Studio を開きなおすと正常にビルドされました

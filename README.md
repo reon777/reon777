@@ -6,7 +6,7 @@ https://reon777.com
 ## 利用技術
 
 | Key            | Value          |
-|:---------------|:---------------|
+| :------------- | :------------- |
 | フレームワーク | Hexo           |
 | Hosting        | Netlify        |
 | ドメイン       | Route53 at AWS |
@@ -18,9 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "You_must_be_an_Admin_or_Technical_user_in_order_to_deliver_content_or_metadata"
-hexo new draft "bitflyer_profit_20190430"
-hexo publish "bitflyer_profit_20190430"
+hexo new "prohibit-scaling"
 ```
 
 ### キャッシュを削除
@@ -43,4 +41,11 @@ npm install hexo-generator-sitemap --save
 
 # フィード
 npm install hexo-generator-feed --save
+```
+
+### テーマを最新化する
+
+```bash
+cd themes/icarus
+git pull
 ```
