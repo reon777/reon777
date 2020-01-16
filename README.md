@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "prohibit-scaling"
+hexo new "hexo-theme-icarus"
 ```
 
 ### キャッシュを削除

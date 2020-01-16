@@ -1,3 +1,63 @@
+---
+title: 【Hexo】ブログのテーマをicarusにしたよ！
+tags:
+  - Hexo
+date: 2020-01-17
+---
+
+### はじめに
+
+ブログのテーマを icarus に変えたよ！
+微妙にハマりポイントがあったのでメモしておくよ！
+
+<!-- more -->
+
+公式サイト
+https://github.com/ppoffice/hexo-theme-icarus
+
+### 変更手順
+
+1. ダウンロード
+
+上の公式サイトから zip をダウンロードして解凍して themes フォルダに配置する
+
+ここが最初のハマりポイントで、僕の場合はすでにブログ全体を git 管理していたせいか、git clone だと２重管理になってしまってライブリロード機能が動かなかった！
+なので zip を利用した！
+
+2. テーマ反映
+
+ルートフォルダの`_config.yml`の theme を修正する
+
+1 で作成したフォルダ名にする
+僕はフォルダ名を icarus に変えたので以下の通りに修正した
+
+```yml
+theme: icarus
+```
+
+3. 言語変更
+
+ルートフォルダの`_config.yml`の language を修正する
+
+```yml
+language: ja
+```
+
+4. `.gitignore`を変更
+
+icarus フォルダの`.gitignore`に`_config.yml`が入っているので必要があれば削除する
+
+これ最初気付かなくて微妙にハマった、、
+
+5. icarus フォルダの`_config.yml`を修正
+
+あとは icarus フォルダの`_config.yml`をお好みに変更すれば OK！
+
+参考までに自分の`_config.yml`はこんな感じです。
+
+thumbnail（サムネイル）は便利そうだけど画像をテーマフォルダに入れるのが面倒だったので使ってないです、、
+
+```yml
 # Version of the Icarus theme that is currently used
 version: 2.6.0
 # Path or URL to the website's icon
@@ -203,7 +263,7 @@ plugins:
   # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Google-Analytics
   google-analytics:
     # Google Analytics tracking id
-    tracking_id: UA-139163911-1
+    tracking_id:
   # Baidu Analytics plugin settings
   # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Baidu-Analytics
   baidu-analytics:
@@ -228,3 +288,13 @@ providers:
   fontcdn: google
   # Name or URL of the webfont Icon CDN provider
   iconcdn: fontawesome
+```
+
+コメントアウトばっかだな、、
+
+以上です！
+
+### 参考サイト
+
+[HEXO テーマ「icarus」導入のあれこれ](https://blog.hyrogram.com/2018/08/26/)
+[Hexo のテーマ Icarus をカスタマイズする](https://soblin.netlify.com/004-icarus-customize/)
