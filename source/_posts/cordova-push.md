@@ -38,23 +38,23 @@ GoogleService-Info.plist に以下の２行を追加する
 	<false></false>
 ```
 
-#### 【ios】Provisioning Profile 作成
-
-- 以下のページから対象のアプリを選択する
-  https://developer.apple.com/account/resources/identifiers/list
-  ※UIが古いけど慌てない。やることは同じ。まずは左のKeysを押そう。
-- Push Notifications を有効にする
-- Configure ボタンを押す
-- プッシュ通知用の Certificate を２つ作成・設定する
-- Provisioning Profile を新しく作成して XCode で利用する
-- Saveボタンを押して保存する
-
 #### 【ios】サーバ登録用の証明書ファイル作成
 
 プッシュ用の証明書を作成する
 以下を参考にして p8 ファイルをダウンロードして firebase に登録する
 p8 ファイルは複数アプリで使い回し可能
 https://qiita.com/matsuyoro/items/77408e5d09ef00be8577
+※UI が古いけど慌てない。やることは同じ。まずは左の Keys を押そう。
+
+#### 【ios】アプリにプッシュ設定を追加
+
+- 以下のページから対象のアプリを選択する
+  https://developer.apple.com/account/resources/identifiers/list
+- Push Notifications を有効にする
+- Configure ボタンを押す
+- プッシュ通知用の Certificate を２つ作成してダウンロードしてダブルクリックでキーチェーンに登録する
+
+- Provisioning Profile を再作成する
 
 #### 【android】アプリ ID が一致しているかを確認
 
@@ -87,6 +87,8 @@ https://qiita.com/matsuyoro/items/77408e5d09ef00be8577
 <!-- 公式サイト -->
 
 https://www.npmjs.com/package/cordova-plugin-fcm-with-dependecy-updated
+
+cordova ルートフォルダで以下のコマンドを実行する
 
 ```bash
 cordova plugin add cordova-plugin-fcm-with-dependecy-updated@3.2.0
