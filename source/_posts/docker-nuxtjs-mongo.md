@@ -9,20 +9,20 @@ date: 2019-12-12
 
 # はじめに
 
-DockerComposeでNuxt.jsとMongoDBを構築したので手順をメモ
+DockerCompose で Nuxt.js と MongoDB を構築したので手順をメモ
 
 <!-- more -->
 
-# Dockerインストール
+# Docker インストール
 
-## 1. Ubuntuの場合
+## 1. Ubuntu の場合
 
 以下の通り
 https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
 
-## 2. Amazon Linuxの場合
+## 2. Amazon Linux の場合
 
-### 2.1 Dockerインストール
+### 2.1 Docker インストール
 
 ```bash
 sudo yum update -y
@@ -32,14 +32,15 @@ sudo usermod -a -G docker ec2-user
 docker --version
 ```
 
-### 2.2 Docker Composeインストール
+### 2.2 Docker Compose インストール
+
 ```bash
 sudo curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-# docker設定
+# docker 設定
 
 ```bash
 mkdir mydocker
@@ -47,7 +48,7 @@ cd mydocker
 ```
 
 以下の`docker-compose.yml`を設置する
-※hogeはリポジトリ名に変更する
+※hoge はリポジトリ名に変更する
 
 ```yml
 version: '3'
@@ -75,9 +76,9 @@ services:
       - ./configdb:/data/configdb
 ```
 
-# Nuxtアプリ起動
+# Nuxt アプリ起動
 
-##  クローンとビルド
+## クローンとビルド
 
 ```bash
 git clone hoge.git
@@ -89,29 +90,33 @@ npm -v
 npm run build
 ```
 
-## mongodb接続コードサンプル
+## mongodb 接続コードサンプル
 
 ```js
-async () => {
+;async () => {
   try {
     const mongodb = require('mongodb')
     const MongoClient = mongodb.MongoClient
-    const client = await MongoClient.connect('mongodb://mongo:27017', { useUnifiedTopology: true });
+    // ユーザパスワードなし
+    // const client = await MongoClient.connect('mongodb://mongo:27017', { useUnifiedTopology: true })
+    // ユーザパスワードあり
+    const client = await MongoClient.connect('mongodb://user:pass@mongo:27017', {
+      useUnifiedTopology: true
+    })
 
-    const db = client.db('testDB');
-    const col = db.collection('users');
+    const db = client.db('testDB')
+    const col = db.collection('users')
 
-    const data = await col.find({ id: 'test' }).toArray();
-    console.log(data);
-    client.close();
+    const data = await col.find({ id: 'test' }).toArray()
+    console.log(data)
+    client.close()
   } catch (err) {
     console.log({ err })
   }
 }
-
 ```
 
-# Docker起動
+# Docker 起動
 
 ```bash
 docker-compose up -d
@@ -120,10 +125,9 @@ docker ps -a
 docker-compose stop
 ```
 
-##  結果確認
+## 結果確認
 
-
-### mongodbインストール
+### mongodb インストール
 
 ```bash
 sudo vi /etc/yum.repos.d/mongodb-org-4.2.repo
@@ -147,7 +151,7 @@ sudo yum install -y mongodb-org
 参考
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/
 
-###  結果確認
+### 結果確認
 
 ```bash
 # 挿入結果を確認
@@ -164,7 +168,7 @@ db.test_col.find()
 エラー
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 原因
-dockerが起動できていない
+docker が起動できていない
 解決策
 sudo service docker start
 
@@ -172,6 +176,6 @@ sudo service docker start
 Address already in use
 原因
 前の起動のプロセスが終了してなくてポートがかぶってる
-解決策(PIDは変えること)
+解決策(PID は変えること)
 ps ax | grep mongo
-kill -9  3990
+kill -9 3990

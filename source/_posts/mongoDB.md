@@ -29,11 +29,17 @@ npm install mongodb
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
 async function init() {
-  client = await MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true });
+  // ユーザパスワードなし
+  // client = await MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true });
+  // ユーザパスワードあり
+  client = await MongoClient.connect('mongodb://user:pass@localhost:27017', {
+    useUnifiedTopology: true
+  })
+}
 init()
 
-const db = client.db("testDB");
-const col = db.collection("testCOL");
+const db = client.db('testDB')
+const col = db.collection('testCOL')
 ```
 
 ## データ取得(SELECT)
@@ -42,18 +48,18 @@ const col = db.collection("testCOL");
 // 検索条件
 const req_data = {
   user_id: 123
-};
+}
 // 取得データフィルタ
 const res_fields = {
   _id: 0,
   user_id: 1,
   user_name: 1
-};
+}
 // データ取得
 const res_data = await col
   .find(req_data)
   .project(res_fields)
-  .toArray();
+  .toArray()
 ```
 
 ### 検索条件で OR を使う
@@ -62,15 +68,15 @@ const res_data = await col
 // 検索条件
 let req_data = {
   $or: [{ user_id: 123 }, { use_flg: 1 }]
-};
+}
 ```
 
 ### 検索条件で json のキーを使う
 
 ```js
-const user_id = 123;
-let req_data = {};
-req_data["user." + user_id] = { $exists: true };
+const user_id = 123
+let req_data = {}
+req_data['user.' + user_id] = { $exists: true }
 ```
 
 ## データ更新(UPDATE)
@@ -79,11 +85,11 @@ req_data["user." + user_id] = { $exists: true };
 // 検索条件
 const req_data = {
   user_id: 123
-};
+}
 // 更新データ
-const update_data = { $set: { status: 9 } };
+const update_data = { $set: { status: 9 } }
 // データ更新
-const data = await col.updateOne(req_data, update_data);
+const data = await col.updateOne(req_data, update_data)
 ```
 
 `$set`を使わないとドキュメントごと上書きになるので注意
@@ -94,9 +100,9 @@ const data = await col.updateOne(req_data, update_data);
 // 挿入データ
 let req_data = {
   user_id: 123
-};
+}
 // データ挿入
-const data = await col.insertOne(req_data);
+const data = await col.insertOne(req_data)
 ```
 
 ## おわりに
