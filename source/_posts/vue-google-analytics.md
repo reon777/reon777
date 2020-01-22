@@ -7,8 +7,10 @@ date: 2020-01-08
 
 ### はじめに
 
-Vueサイトにgoogle analyticsを埋め込んだのでメモします
+Vue サイトに google analytics を埋め込んだのでメモします
 めっちゃ簡単です。
+
+<!-- more -->
 
 ### ライブラリインストール
 
@@ -21,7 +23,7 @@ npm install vue-gtag
 
 ### 修正
 
-main.jsに以下を追加
+main.js に以下を追加
 
 ```js
 import Vue from 'vue'
@@ -29,11 +31,15 @@ import App from './App.vue'
 import router from './router'
 
 // この塊を追加
-// google アナリティクス 
-import VueGtag from "vue-gtag";
-Vue.use(VueGtag, {
-  config: { id: "UA-123456789-1" }
-}, router);
+// google アナリティクス
+import VueGtag from 'vue-gtag'
+Vue.use(
+  VueGtag,
+  {
+    config: { id: 'UA-123456789-1' }
+  },
+  router
+)
 
 new Vue({
   router,
@@ -41,7 +47,7 @@ new Vue({
 }).$mount('#app')
 ```
 
-UA-123456789-1の部分は自分のやつに変えてね！
+UA-123456789-1 の部分は自分のやつに変えてね！
 
 ### おわりに
 

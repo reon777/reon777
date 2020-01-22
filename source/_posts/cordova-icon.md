@@ -16,14 +16,15 @@ title: 【cordova】アイコン画像の設定方法
 ### 画像作成と配置
 
 1024\*1024 のサイズのアイコン画像を用意する
-icon.png という名前にしてrefフォルダ直下に置きます
+icon.png という名前にして res フォルダ直下に置きます
 
 ちなみにここで画像のサイズ変更ができます
 https://onlinepngtools.com/resize-png
 
-### androidの場合
+### android の場合
 
-androidの場合はconfig.xmlに以下の行を追加するだけです
+android の場合は config.xml に以下の行を追加するだけです
+android だけが対象なので`<platform name="android">`タグの中に追加します
 
 ```xml
 <platform name="android">
@@ -32,9 +33,9 @@ androidの場合はconfig.xmlに以下の行を追加するだけです
 </platform>
 ```
 
-### iosの場合
+### ios の場合
 
-iosの場合はなぜか上のやり方だとダメなのでライブラリを利用します
+ios の場合はなぜか上のやり方だとダメなのでライブラリを利用します
 
 ### ライブラリインストール
 
@@ -53,7 +54,13 @@ npm install cordova-icon
 cordova-icon --icon=res/icon.png
 ```
 
-あとは普通にビルドすれば OK！
+ファイル名を`icon.png`以外にしたら以下のエラーになった
+多分`icon.jpeg`とかは大丈夫だと思う
+
+エラー
+`CompileAssetCatalog build/emulator/hoge.app hoge/Images.xcassets`
+
+エラーが出なければ、あとは普通にビルドすれば OK！
 
 ### 参考
 

@@ -53,6 +53,17 @@ icarus フォルダの`.gitignore`に`_config.yml`が入っているので必要
 
 あとは icarus フォルダの`_config.yml`をお好みに変更すれば OK！
 
+6. その他
+
+サーバ起動時に`--draft`を付けないと画面更新で修正が反映されなくなった（汗）
+
+```bash
+# 修正前
+hexo server
+# 修正後
+hexo server --draft
+```
+
 参考までに自分の`_config.yml`はこんな感じです。
 
 thumbnail（サムネイル）は便利そうだけど画像をテーマフォルダに入れるのが面倒だったので使ってないです、、
@@ -120,7 +131,7 @@ article:
     # Show code copying button
     clipboard: true
     # Default folding status of the code blocks. Can be "", "folded", "unfolded"
-    fold: ""
+    fold: ''
   # Whether to show article thumbnail images
   thumbnail: false
   # Whether to show estimate article reading time
@@ -194,18 +205,18 @@ widgets:
     # Whether to show avatar image rounded or square
     avatar_rounded: false
     # Path or URL for the follow button
-    follow_link: ""
+    follow_link: ''
     # Links to be shown on the bottom of the profile widget
     social_links:
       Github:
         icon: fab fa-github
-        url: "https://github.com/reon777"
+        url: 'https://github.com/reon777'
       # Facebook:
       #   icon: fab fa-facebook
       #   url: ""
       Twitter:
         icon: fab fa-twitter
-        url: "https://twitter.com/reo3313"
+        url: 'https://twitter.com/reo3313'
       # Dribbble:
       #   icon: fab fa-dribbble
       #   url: "https://dribbble.com"

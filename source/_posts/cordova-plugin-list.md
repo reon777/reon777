@@ -1,18 +1,28 @@
 ---
-title: 【Cordova】Minimum supported Gradle version is 4.10.1. Current version is 4.6.
+title: 【Cordova】よく利用するプラグイン一覧
 tags:
   - Cordova
-date: 2019-11-26 09:00:00
+date: 2020-01-17 10:00:00
 ---
 
 {% asset_img cordova.jpeg %}
 
 ### はじめに
 
+最近は Cordova を利用したハイブリッドアプリが流行ってきてますね
+Cordova を導入した時にいつも入れているプラグインをメモしておきます
+
+<!-- more -->
 
 ### アイコン画像の設定
 
+以下の記事を参照
+[【cordova】アイコン画像の設定方法](/2019/09/21/cordova-icon/)
+
 ### スプラッシュスクリーンの設定
+
+以下の記事を参照
+[cordova-plugin-splashscreen】スプラッシュスクリーンの設定方法](/2019/09/06/cordova-plugin-splashscreen/)
 
 #### スプラッシュスクリーン表示中のローディング表示をなくす
 
@@ -22,7 +32,7 @@ date: 2019-11-26 09:00:00
 <preference name="ShowSplashScreenSpinner" value="false" />
 ```
 
-### iPhone Xで上下の空白をなくす
+### iPhone X で上下の空白をなくす
 
 ### 内部ストレージ
 
@@ -35,6 +45,7 @@ cordova plugin add cordova-plugin-file
 ```xml
 <preference name="Orientation" value="portrait" />
 ```
+
 ## [ios]画面外のバウンスを無効にする
 
 `config.xml`に以下を追加する
@@ -42,4 +53,3 @@ cordova plugin add cordova-plugin-file
 ```xml
 <preference name="DisallowOverscroll" value="true" />
 ```
-
