@@ -98,11 +98,11 @@ npm run build
     const mongodb = require('mongodb')
     const MongoClient = mongodb.MongoClient
     // ユーザパスワードなし
-    // const client = await MongoClient.connect('mongodb://mongo:27017', { useUnifiedTopology: true })
+    const client = await MongoClient.connect('mongodb://mongo:27017', { useUnifiedTopology: true })
     // ユーザパスワードあり
-    const client = await MongoClient.connect('mongodb://user:pass@mongo:27017', {
-      useUnifiedTopology: true
-    })
+    // const client = await MongoClient.connect('mongodb://user:pass@mongo:27017', {
+    //   useUnifiedTopology: true
+    // })
 
     const db = client.db('testDB')
     const col = db.collection('users')
