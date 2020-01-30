@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "milk-boy-manzai-botter"
+hexo new "node-hash"
 ```
 
 ### キャッシュを削除
