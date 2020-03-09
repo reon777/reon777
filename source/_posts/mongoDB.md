@@ -94,7 +94,36 @@ const data = await col.updateOne(req_data, update_data)
 
 `$set`を使わないとドキュメントごと上書きになるので注意
 
-## データ挿入(INSERT)
+## 連想配列の特定のデータのみ更新
+
+```js
+let update_data = {}
+update_data['hoge_json.' + hoge_id + '.piyo_json.' + piyo_id + '.name'] = 'test name'
+let data = await col.updateOne(req_data, { $set: update_data })
+// データがなければ追加するオプション
+// let data = await col.updateOne(req_data, { $set: update_data }, { upsert: true })
+```
+
+## 配列になければ追加
+
+```js
+const req_data = {
+  user_id: 123
+}
+const data = await col.updateOne(req_data_team, {
+  $addToSet: { hoge_list: '123' }
+})
+```
+
+## 連想配列から特定のデータだけ削除
+
+```js
+let update_data = {}
+update_data['hoge_json.' + json_key] = ''
+let data = await col.updateOne(req_data, { $unset: update_data })
+```
+
+## ドキュメント追加(INSERT)
 
 ```js
 // 挿入データ
