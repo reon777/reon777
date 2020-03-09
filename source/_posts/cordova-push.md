@@ -91,17 +91,15 @@ https://www.npmjs.com/package/cordova-plugin-fcm-with-dependecy-updated
 cordova ルートフォルダで以下のコマンドを実行する
 
 ```bash
-cordova plugin add cordova-plugin-fcm-with-dependecy-updated@3.2.0
+cordova plugin add cordova-plugin-fcm-with-dependecy-updated
 ```
 
-※2019/10/29 時点で最新版は 4.1.0 ですがこれだと
-FCMPlugin is not defined
-のエラーになったので 3.2.0 版を指定してます
+~~※2019/10/29 時点で最新版は 4.1.0 ですがこれだと~~
+~~FCMPlugin is not defined~~
+~~のエラーになったので 3.2.0 版を指定してます~~
 
-ちなみに元の公式サイトはこっち
-https://github.com/fechanique/cordova-plugin-fcm
-
-なのですが、こちらはバグがあって上のサイトがその修正バージョンです
+2020/1/22 追記
+上記のバグは 4.1.1 で解消済みだった
 
 ### 【ios】準備
 
