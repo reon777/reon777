@@ -1,5 +1,5 @@
 ---
-title: 【Node.js】文字列をハッシュ化するシンプルな方法
+title: 【Node.js】文字列をハッシュ化する方法
 tags:
   - Node.js
 date: 2020-01-30
@@ -11,22 +11,15 @@ date: 2020-01-30
 
 Node.js で文字列を hash 化する手順をメモしておきます
 
-最初は npm パッケージとか色々探してたのですが良い感じのがなくてどうしようかな〜と思ってたら、なんと公式のライブラリがあって機能が充実してて良い感じでした
-npm インストール不要で使えます
+他の記事で crypto ライブラリを使っているものをよく見ますが、crypto ライブラリは deprecated になったので使わない方が良いです
+以下では crypto-js ライブラリを使ってます
 
 ### 手順
 
 ```js
-const crypto = require('crypto')
+const CryptoJS = require('crypto-js')
 const password = 'hoge'
-const hashed_password = crypto
-  .createHash('sha256')
-  .update(password)
-  .digest('hex')
+const hashed_password = CryptoJS.SHA256(this.password).toString(CryptoJS.enc.Base64)
 ```
-
-### 参考 URL
-
-https://nodejs.org/api/crypto.html#crypto_class_hash
 
 以上です
