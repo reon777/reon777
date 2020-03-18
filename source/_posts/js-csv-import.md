@@ -11,13 +11,15 @@ date: 2020-03-18
 
 JavaScript で CSV を取り込むコードです
 
+CSV 取り込みの文字をクリックでファイル選択するか、ドラッグアンドドロップでもできます。
+
 ### コード
 
 html
 
 ```html
 <input @change="fileChange" type="file" id="file_input_expense" name="file_input_expense" hidden />
-<label for="file_input_expense">CSV取り込み</label>
+<label for="file_input_expense" @dragover.prevent @drop.prevent="fileChange">CSV取り込み</label>
 ```
 
 JavaScript
@@ -25,6 +27,11 @@ JavaScript
 ```js
 fileChange(e) {
   console.log('start fileChange');
+
+  let file = null;
+  if (e.target.files) file = e.target.files[0];
+  else if (e.dataTransfer.files) file = e.dataTransfer.files[0];
+  else return;
 
   const file = e.target.files[0];
   const reader = new FileReader();
