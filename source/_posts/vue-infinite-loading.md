@@ -2,6 +2,7 @@
 title: 【Vue.js】無限スクロール処理
 tags:
   - Vue
+date: 2020-03-09
 ---
 
 {% asset_img vue.png %}
@@ -62,3 +63,5 @@ async get_news_list() {
   this.$refs.infiniteLoading.stateChanger.loaded();
 }
 ```
+
+`this.$refs.infiniteLoading.stateChanger.reset();`で初期化できます
