@@ -2,6 +2,7 @@
 title: JavaScriptでのダブルクリック処理の実装方法
 tags:
   - JavaScript
+date: 2020-03-09 10:00:00
 ---
 
 ### コード
