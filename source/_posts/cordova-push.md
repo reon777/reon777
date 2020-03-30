@@ -14,6 +14,12 @@ cordova にプッシュ通知機能を実装したので手順をメモしてお
 
 <!-- more -->
 
+**2020/3/30 追記**
+本記事とは別のライブラリを使ったパターンの記事を見つけました
+僕はまだ試していないのですが、[より最新かつ人気のライブラリを使っている](https://www.npmtrends.com/cordova-plugin-firebasex-vs-cordova-plugin-fcm-with-dependecy-updated)のでこちらを使う方がいいかもしれません！
+[Vue + Cordova + Firebase でプッシュ通知](https://r17n.page/2020/01/21/vue-cordova-firebase-push-notification/)
+追記終わり
+
 ### 環境
 
 - cordova-plugin-fcm-with-dependecy-updated: 3.2.0
