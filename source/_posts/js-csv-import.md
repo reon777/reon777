@@ -80,9 +80,9 @@ fileChange(e) {
     obj.value = '';
   };
 
-  // onloadはreadAsBinaryStringでファイルを読み込んだ後に実行されます.
+  // onloadはreadAsTextでファイルを読み込んだ後に実行されます.
   reader.onload = loadFunc;
-  reader.readAsBinaryString(file);
+  reader.readAsText(file);
 },
 
 column_count_is_not_2(column_count, row_num) {
