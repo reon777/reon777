@@ -39,7 +39,11 @@ fileChange(e) {
   const reader = new FileReader();
 
   const loadFunc = async () => {
-    const lines = reader.result.split('\n');
+    if (this.check_file_extension(file.type)) return
+    let lines = reader.result
+    // 改行コードのCRLFをLFに変更
+    lines = lines.replace(/\r\n/g, "\n");
+    lines = lines.split('\n');
     // ヘッダ
     let header = lines.shift();
     header = header.split(',');
@@ -84,7 +88,15 @@ fileChange(e) {
   reader.onload = loadFunc;
   reader.readAsText(file);
 },
-
+check_file_extension(type) {
+  if (type == 'text/csv') return false
+  // Windowsのcsvはこの拡張子になる
+  if (type == 'application/vnd.ms-excel') return false
+  console.log('エラー：ファイル形式をcsvにしてください。現在のファイル形式：' + type);
+  var obj = document.getElementById('file_input_expense');
+  obj.value = '';
+  return true;
+},
 column_count_is_not_2(column_count, row_num) {
   if (column_count != 2) {
     console.log('[' + row_num + '行目] カラム数を2にしてください。現在のカラム数：' + column_count);
