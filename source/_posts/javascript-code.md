@@ -48,6 +48,12 @@ cars.includes('Volvo') // true
 
 ## 連想配列（JSON)
 
+### 初期化
+
+```js
+for (var member in myObject) delete myObject[member];
+```
+
 ### for で回す
 
 ```js
