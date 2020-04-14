@@ -86,6 +86,9 @@ fileChange(e) {
 
   // onloadはreadAsTextでファイルを読み込んだ後に実行されます.
   reader.onload = loadFunc;
+  reader.onerror = () => {
+    console.log('ファイル読み取りエラー')
+  }
   reader.readAsText(file);
 },
 check_file_extension(type) {
