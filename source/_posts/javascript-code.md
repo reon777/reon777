@@ -19,23 +19,27 @@ for (let car of cars) {
   console.log(car) // 'BMW'
 }
 ```
+### for で回す（index付き）
+
+```js
+let cars = ['BMW', 'Volvo', 'Mini']
+for (let [index, car] of cars.entries()) {
+  console.log(car) // 'BMW'
+}
+```
 
 ### forEach で回す
 
 ```js
 let cars = ['BMW', 'Volvo', 'Mini']
-cars.forEach(car => {
-  console.log(car) // 'BMW'
-})
+cars.forEach(car => { console.log(car) }) // 'BMW'
 ```
 
-### 重複を除く
+### 値を取り除く
 
 ```js
 let cars = ['BMW', 'Volvo', 'Mini']
-cars = cars.filter(car => {
-  car !== 'Volvo'
-})
+cars = cars.filter(car => { car !== 'Volvo' })
 console.log(cars) // ['BMW', 'Mini']
 ```
 
