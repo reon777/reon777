@@ -39,7 +39,7 @@ cars.forEach(car => { console.log(car) }) // 'BMW'
 
 ```js
 let cars = ['BMW', 'Volvo', 'Mini']
-cars = cars.filter(car => { car !== 'Volvo' })
+cars = cars.filter(car => { return car !== 'Volvo' })
 console.log(cars) // ['BMW', 'Mini']
 ```
 
