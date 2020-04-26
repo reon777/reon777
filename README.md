@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "git-pull-rebase"
+hexo new "skype-shortcut-change"
 ```
 
 ### キャッシュを削除

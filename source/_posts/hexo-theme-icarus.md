@@ -5,7 +5,7 @@ tags:
 date: 2020-01-17
 ---
 
-### はじめに
+## はじめに
 
 ブログのテーマを icarus に変えたよ！
 微妙にハマりポイントがあったのでメモしておくよ！
@@ -15,16 +15,16 @@ date: 2020-01-17
 公式サイト
 https://github.com/ppoffice/hexo-theme-icarus
 
-### 変更手順
+## 変更手順
 
-1. ダウンロード
+### 1. ダウンロード
 
 上の公式サイトから zip をダウンロードして解凍して themes フォルダに配置する
 
 ここが最初のハマりポイントで、僕の場合はすでにブログ全体を git 管理していたせいか、git clone だと２重管理になってしまってライブリロード機能が動かなかった！
 なので zip を利用した！
 
-2. テーマ反映
+### 2. テーマ反映
 
 ルートフォルダの`_config.yml`の theme を修正する
 
@@ -35,7 +35,7 @@ https://github.com/ppoffice/hexo-theme-icarus
 theme: icarus
 ```
 
-3. 言語変更
+### 3. 言語変更
 
 ルートフォルダの`_config.yml`の language を修正する
 
@@ -43,26 +43,46 @@ theme: icarus
 language: ja
 ```
 
-4. `.gitignore`を変更
+### 4. `.gitignore`を変更
 
 icarus フォルダの`.gitignore`に`_config.yml`が入っているので必要があれば削除する
 
 これ最初気付かなくて微妙にハマった、、
 
-5. icarus フォルダの`_config.yml`を修正
+### 5. icarus フォルダの`_config.yml`を修正
 
 あとは icarus フォルダの`_config.yml`をお好みに変更すれば OK！
 
-6. その他
+### 6. CSS修正
 
-サーバ起動時に`--draft`を付けないと画面更新で修正が反映されなくなった（汗）
+見出しだけ変更しました
 
-```bash
-# 修正前
-hexo server
-# 修正後
-hexo server --draft
+対象ファイル
+　themes/icarus/source/css/style.styl
+
+325行目からです
+
+```css
+/* ---------------------------------
+ *        Fix content elements
+ * --------------------------------- */
+.content
+    h1
+        font-weight: bold
+    h2
+        font-size: 1.5em
+        color: #363636;
+        background: #0080002e;
+        padding: 10px 0px;
+        text-align: center;
+    h3
+        font-size: 1.25em
+        padding: 0.25em 0.5em;
+        background: transparent;
+        border-left: solid 5px #0080002e;
 ```
+
+### 7. その他
 
 参考までに自分の`_config.yml`はこんな感じです。
 
@@ -305,7 +325,7 @@ providers:
 
 以上です！
 
-### 参考サイト
+## 参考サイト
 
 [HEXO テーマ「icarus」導入のあれこれ](https://blog.hyrogram.com/2018/08/26/)
 [Hexo のテーマ Icarus をカスタマイズする](https://soblin.netlify.com/004-icarus-customize/)
