@@ -50,6 +50,13 @@ let cars = ['BMW', 'Volvo', 'Mini']
 cars.includes('Volvo') // true
 ```
 
+### 逆順にする
+
+```js
+let cars = ['BMW', 'Volvo', 'Mini']
+let cars_sort = cars.reverse();
+```
+
 ## 連想配列（JSON)
 
 ### 初期化
