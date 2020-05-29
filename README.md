@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "skype-shortcut-change"
+hexo new "laravel-iphone-image"
 ```
 
 ### キャッシュを削除

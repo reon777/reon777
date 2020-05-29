@@ -96,6 +96,30 @@ let person = { full_name: 'John', last_name: 'Doe', age: 25 }
 JSON.parse(JSON.stringify(person))
 ```
 
+### Keyで並び替える
+
+```js
+onst unordered = {
+  'b': 'foo',
+  'c': 'bar',
+  'a': 'baz'
+};
+
+console.log(JSON.stringify(unordered));
+// → '{"b":"foo","c":"bar","a":"baz"}'
+
+const ordered = {};
+Object.keys(unordered).sort().forEach(function(key) {
+  ordered[key] = unordered[key];
+});
+
+console.log(JSON.stringify(ordered));
+// → '{"a":"baz","b":"foo","c":"bar"}'
+```
+
+参考
+https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key
+
 ### 配列を csv ファイルとしてダウンロードする
 
 https://code-maven.com/create-and-download-csv-with-javascript
