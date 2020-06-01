@@ -49,3 +49,7 @@ npm install hexo-generator-feed --save
 cd themes/icarus
 git pull
 ```
+
+### 見出しのデザイン変える
+
+`border-bottom: solid 3px #0080002e;`で検索する

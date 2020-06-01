@@ -80,6 +80,11 @@ icarus フォルダの`.gitignore`に`_config.yml`が入っているので必要
         padding: 0.25em 0.5em;
         background: transparent;
         border-left: solid 5px #0080002e;
+    h4
+        font-size: 1.125em;
+        border-bottom: solid 3px #0080002e;
+        display: inline-block;
+        padding-bottom: 3px;
 ```
 
 ### 7. その他
