@@ -7,6 +7,8 @@ date: 2020-06-01 11:00:00
 
 Mac が壊れた時のために初期設定とか入れたツールとかをメモしておきます
 
+<!-- more -->
+
 ### インストールしたやつ
 
 - Chrome
@@ -57,10 +59,12 @@ brew install gradle ## cordova run android コマンドで必要
 
 #### grafana
 
+```bash
 brew tap homebrew/services
 brew services start grafana
+```
 
-vi /usr/local/etc/grafana/grafana.ini
+`vi /usr/local/etc/grafana/grafana.ini`
 でポート変えれる
 
 http://localhost:3000
