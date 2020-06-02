@@ -7,5 +7,7 @@ tags:
 
 ![](/images/hoge.jpeg)
 
+{% asset_img cordova.jpeg %}
+
 ### はじめに
 
