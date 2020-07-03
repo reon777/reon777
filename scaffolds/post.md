@@ -5,9 +5,8 @@ tags:
   - Cordova
 ---
 
-![](/images/hoge.jpeg)
-
-{% asset_img cordova.jpeg %}
+![](/images/ムーミン1.jpg)
 
 ### はじめに
 
+<!-- more -->
