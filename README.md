@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "ec2-hacking"
+hexo new "numerai-compute"
 ```
 
 ### キャッシュを削除
