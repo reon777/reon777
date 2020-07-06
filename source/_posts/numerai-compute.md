@@ -28,54 +28,54 @@ https://docs.numer.ai/help/compute-tutorial
 
 ## エラー一覧
 
-### `Error: error using credentials to get account ID: error calling sts:GetCallerIdentity: InvalidClientTokenId: The security token included in the request is invalid.`
+### Error: error using credentials to get account ID: error calling sts:GetCallerIdentity: InvalidClientTokenId: The security token included in the request is invalid.
 
 - IAM の id とパスワードが間違っている。
   `~/.numerai`を修正する
 
-### `Error: Error creating VPC: VpcLimitExceeded: The maximum number of VPCs has been reached.`
+### Error: Error creating VPC: VpcLimitExceeded: The maximum number of VPCs has been reached.
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/vpc/home?region=us-east-1#vpcs:sort=VpcId
   上限は５つまで
 
-### `Error: Error creating IAM Role numerai-submission-ecs:`
+### Error: Error creating IAM Role numerai-submission-ecs:
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/iam/home?region=us-east-1#/roles
 
-### `Error: Error creating IAM policy numerai-submission_lambda_logging: EntityAlreadyExists: A policy called numerai-submission_lambda_logging already exists. Duplicate names are not allowed.`
+### Error: Error creating IAM policy numerai-submission_lambda_logging: EntityAlreadyExists: A policy called numerai-submission_lambda_logging already exists. Duplicate names are not allowed.
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/iam/home?region=us-east-1#/policies
 
-### `Error: Error creating Lambda function: ResourceConflictException: Function already exist: numerai-submission`
+### Error: Error creating Lambda function: ResourceConflictException: Function already exist: numerai-submission
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
 
-### `Error: Error waiting for internet gateway (igw-0fe357aa54217a5d7) to detach: couldn't find resource (31 retries)`
+### Error: Error waiting for internet gateway (igw-0fe357aa54217a5d7) to detach: couldn't find resource (31 retries)
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/apigateway/main/apis?region=us-east-1
 
-### `Error: Creating CloudWatch Log Group failed: ResourceAlreadyExistsException: The specified log group already exists:`
+### Error: Creating CloudWatch Log Group failed: ResourceAlreadyExistsException: The specified log group already exists:
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups
 
-### `Error: error creating ECR repository: RepositoryAlreadyExistsException:`
+### Error: error creating ECR repository: RepositoryAlreadyExistsException:
 
 - 以下の URL から対象のデータを削除する
   https://console.aws.amazon.com/ecr/repositories?region=us-east-1#
 
-### `subprocess.CalledProcessError: Command 'docker run --rm -it -v /Users/hoge/example-numerai:/opt/app -w /opt/app 385897885420.dkr.ecr.us-east-1.amazonaws.com/numerai-submission python train.py' returned non-zero exit status 137.`
+### subprocess.CalledProcessError: Command 'docker run --rm -it -v /Users/hoge/example-numerai:/opt/app -w /opt/app 385897885420.dkr.ecr.us-east-1.amazonaws.com/numerai-submission python train.py' returned non-zero exit status 137.
 
 - メモリ不足
   Docker のメモリを増やす
   元々 2GB だったのを 16GB に増やすと成功しました(フォーラム上では 12GB で成功したとあるが、自分の場合は 12GB だとダメだった)
 
-### `AttributeError: module 'model' has no attribute 'model_id'`
+### AttributeError: module 'model' has no attribute 'model_id'
 
 - `predict.py`の以下の行(51 行目)を修正する
 
@@ -93,7 +93,7 @@ https://docs.numer.ai/help/compute-tutorial
     + model_id = 'hoge'
 ```
 
-### `ERROR numerapi.base_api: Your session is invalid or has expired.`
+### ERROR numerapi.base_api: Your session is invalid or has expired.
 
 - すでに提出済みのモデルがある場合に発生する
   複数モデルの提出について同意する必要がある
