@@ -142,6 +142,13 @@ https://lovemac.jp/3157
 
 https://qiita.com/ashidaka/items/e783cd2fc9a317321c84
 
+#### その他
+
+```bash
+# .DS_storeを作らないようにする
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+```
+
 #### その他 Tips
 
 - ssh 接続設定を変えたい時
