@@ -1,12 +1,17 @@
 ---
-title: 【Cordova】Minimum supported Gradle version is 4.10.1. Current version is 4.6.
-date: 2020-04-
+title: タイトル
+date: 2020-07-10
+photos: images/php.png
 tags:
   - Cordova
 ---
 
 ![](/images/ムーミン1.jpg)
 
-### はじめに
+## はじめに
 
 <!-- more -->
+
+## 目次
+
+<!-- toc -->

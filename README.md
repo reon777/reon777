@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "numerai-compute"
+hexo new "Laravel"
 ```
 
 ### キャッシュを削除
