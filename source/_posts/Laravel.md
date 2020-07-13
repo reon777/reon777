@@ -96,7 +96,7 @@ https://readouble.com/laravel/5.5/ja/migrations.html
 
 ```bash
 # マイグレーションファイル作成
-# usersの部分をDB名に変更すること
+# create_users_tableの部分はなんでも良いけど一意でないとエラーになる
 php artisan make:migration create_users_table
 # マイグレーション実行（DB反映）
 php artisan migrate
@@ -142,6 +142,57 @@ tail -f storage/logs/laravel.log
 
 ## その他
 
+### ページネーションを利用したいとき
+
+- コントローラ
+
+```php
+$users = DB::table('users')->paginate(15);
+```
+
+- ビュー
+
+```php
+<div class="container">
+    @foreach ($users as $user)
+        {{ $user->name }}
+    @endforeach
+</div>
+
+{{ $users->links() }}
+```
+
+参考
+https://laravel.com/docs/7.x/pagination
+
+### 全文検索したい時
+
+基本的には以下の記事の通りにすれば OK
+[Laravel + MySQL5.7 で日本語全文検索をする方法とちょっとした注意点](https://qiita.com/niisan-tokyo/items/33c254bf8c4da3379ad1)
+
+上の記事はテーブル生成と同時にインデックスを作成してますが、後からインデックスを貼りたい場合は以下のようにすれば可能です。
+対象の複数カラムを結合した新しいカラム(fulltext_column)を作成してます。
+
+```php
+DB::statement("ALTER TABLE videos ADD fulltext_column TEXT AS (CONCAT(video_name, '　', overview, '　', product_name)) STORED");
+DB::statement('ALTER TABLE videos ADD FULLTEXT index fulltext_index (`fulltext_column`) with parser ngram');
+```
+
+#### ページネーションを利用している場合
+
+記事にあるようにクラスのスコープを利用すると取得データが 0 件になる不具合があるので以下のように記載すると良いです
+
+```php
+- $videos = Video::freeword($request->search_word)->sortable()->paginate(2);
++ $videos = Video::whereRaw("match(`fulltext_column`) against (? IN NATURAL LANGUAGE MODE)", [$request->search_word])->sortable()->paginate(2);
+```
+
+ページネーション部分には以下のように`withQueryString()`を付けると２ページ目以降に検索ワードが引き継がれます
+
+```php
+{!! $videos->withQueryString()->appends(\Request::except('page'))->render() !!}
+```
+
 ### 変更が画面反映されない時
 
 おそらくキャッシュが残ってしまっているのでキャッシュを削除する
@@ -152,6 +203,11 @@ php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 ```
+
+### コメントアウトしてるのにエラーになる
+
+コメントアウトしている箇所も読み込まれます
+ので内容が不正であればエラーになります
 
 ### ベストプラクティス
 
