@@ -229,6 +229,22 @@ php artisan view:clear
 namespace App\Http\Controllers\Hoge;
 ```
 
+### ログイン機能
+
+以下の記事に従う
+[Laravel のログイン認証の基本(Authentication)を完全理解する](https://reffect.co.jp/laravel/laravel-authentication-understand)
+
+Laravel のバージョンによっては`php artisan make:auth`がエラーになる
+その場合は以下で同じコマンドになる
+
+```bash
+composer require laravel/ui --dev
+php artisan ui vue --auth
+php artisan clear-compiled
+php artisan optimize
+php artisan view:clear
+```
+
 ### ベストプラクティス
 
 - [laravel-best-practices](https://github.com/alexeymezenin/laravel-best-practices/blob/master/japanese.md)
