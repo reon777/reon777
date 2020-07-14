@@ -18,6 +18,8 @@ Cordova を利用していた場合のアプリリリースまでの手順です
 ビルドで xcode-select: error が発生した場合は以下を参考に解決する  
 [Ionic の iOS のビルドのエラー](http://shinriyo.hateblo.jp/entry/2018/02/17/Ionic%E3%81%AEiOS%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC)
 
+<!-- more -->
+
 ## ios・android 共通手順
 
 #### バージョン変更
