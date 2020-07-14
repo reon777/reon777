@@ -209,6 +209,26 @@ php artisan view:clear
 コメントアウトしている箇所も読み込まれます
 ので内容が不正であればエラーになります
 
+### link タグが読み込まれない
+
+パスの最初に`/`がないとトップページ以外の画面で読み込まれませんでした
+
+```html
+<!-- 修正前 -->
+<link rel="stylesheet" type="text/css" href="fontawesome/css/all.css" />
+<!-- 修正後 -->
+<link rel="stylesheet" type="text/css" href="/fontawesome/css/all.css" />
+```
+
+### Class 'App\Http\Controllers\Hoge' not found
+
+コントローラーファイルの位置に合わせて namespace も変更する必要がある
+修正箇所は`Hoge.php`の以下の行
+
+```php
+namespace App\Http\Controllers\Hoge;
+```
+
 ### ベストプラクティス
 
 - [laravel-best-practices](https://github.com/alexeymezenin/laravel-best-practices/blob/master/japanese.md)
