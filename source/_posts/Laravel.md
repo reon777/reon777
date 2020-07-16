@@ -106,6 +106,11 @@ php artisan migrate:rollback
 
 ### データベース から Model ファイルを作成したい時
 
+```bash
+php artisan code:models --table=users
+```
+
+初回は設定が必要
 以下の手順に従う
 
 [Laravel + Eloquent で reliese/laravel を用いてモデルクラスを Scaffolding する](https://qiita.com/pinekta/items/f1f4415ba8190b90aab6)
