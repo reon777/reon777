@@ -2,9 +2,6 @@
 title: SFDbotで60万円損して死にたくなった
 tags:
   - bot
-  - sfd
-  - bitflyer
-  - 日記
 date: 2019-07-03
 ---
 

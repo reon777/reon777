@@ -2,7 +2,6 @@
 title: bitFlyer bot成績(2019年5月19日)
 tags:
   - bot
-  - bitflyer
   - 損益公開
 date: 2019-05-19
 ---

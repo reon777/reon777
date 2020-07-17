@@ -2,7 +2,7 @@
 date: 2019-09-04
 tags:
   - ethereum
-  - js
+  - JavaScript
 title: JavaScriptでイーサリアムを署名・送金してみた
 ---
 

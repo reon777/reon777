@@ -3,7 +3,6 @@ title: 【Cordova】twilio-client-phonegap-pluginのインストールでハマ�
 date: 2019-06-13
 tags:
   - Cordova
-  - twilio
 ---
 
 ## 環境

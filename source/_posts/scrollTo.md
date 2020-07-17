@@ -1,6 +1,6 @@
 ---
 tags:
-  - js
+  - JavaScript
 date: 2019-06-03
 title: jsで特定要素をスクロールする方法
 ---

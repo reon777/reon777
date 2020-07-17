@@ -1,7 +1,7 @@
 ---
 date: 2019-08-09
 tags:
-  - js
+  - JavaScript
 title: 【JavaScript】RSA方式で暗号化・復号化してみた
 ---
 

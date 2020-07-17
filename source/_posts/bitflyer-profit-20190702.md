@@ -2,7 +2,6 @@
 title: 【bitFlyer】2019年6月のbot成績【損益公開】
 tags:
   - bot
-  - bitflyer
   - 損益公開
 date: 2019-07-02
 ---

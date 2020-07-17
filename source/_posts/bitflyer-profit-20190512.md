@@ -2,7 +2,6 @@
 title: サーキットブレイク発動！？botはどうなった！？
 tags:
   - bot
-  - bitflyer
   - 損益公開
 date: 2019-05-12
 ---

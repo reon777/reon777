@@ -1,8 +1,7 @@
 ---
 title: 平成最後だし損益グラフを公開します！
-tags: 
+tags:
   - bot
-  - bitflyer
   - 損益公開
 date: 2019-05-01
 description:

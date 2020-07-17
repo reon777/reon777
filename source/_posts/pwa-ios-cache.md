@@ -18,12 +18,12 @@ ios の PWA のキャッシュって全然消えなくないですか？？？
 どうやら調べた感じだとまだ Safari の PWA 対応が遅れてるっぽいです。。
 
 ```js
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(keys => {
+    caches.keys().then((keys) => {
       console.log('keys: ' + keys)
       return Promise.all(
-        keys.map(key => {
+        keys.map((key) => {
           console.log('不要なキャッシュを削除')
           return caches.delete(key)
         })

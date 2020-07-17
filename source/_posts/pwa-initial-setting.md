@@ -1,7 +1,7 @@
 ---
 date: 2019-06-16
 tags:
-  - pwa
+  - PWA
 title: pwaの導入方法(ios, android)
 ---
 
