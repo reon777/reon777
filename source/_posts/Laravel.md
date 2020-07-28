@@ -115,6 +115,19 @@ php artisan code:models --table=users
 
 [Laravel + Eloquent で reliese/laravel を用いてモデルクラスを Scaffolding する](https://qiita.com/pinekta/items/f1f4415ba8190b90aab6)
 
+### INSERT・UPDATE
+
+```php
+if (User::where("hoge_id", $hoge["id"])->exists()) {
+  // UPDATE
+  $user = User::where("hoge_id", $hoge["id"])->first();
+  $user->fill($request->except(['_token']))->save();
+} else {
+  // INSERT
+  User::create($request->except(['_token']));
+}
+```
+
 ## コントローラー
 
 ### URL とコントローラーの紐付けを設定したい時
