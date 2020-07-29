@@ -22,49 +22,45 @@ tags:
 
 ## テンプレート
 
-### ファイルを分けたい時
+### 表示するビューの外側を共通化
 
-１ファイルに大量にコードを書くと使いにくいですよね。
-ファイルを分割する方法です。
+表示するビューの外側を共通化したい場合です
+例えば`<head>`タグとかですね。
+正確には共通化というより継承ですね
 
-- 呼び出される方
+- 外側のコード
 
-layout/header.blade.php
+ファイル名の例：`resources/views/layout/base.blade.php`
+基本的にはそのままコードを記載し、下のコードを呼び出す部分に`@yield('content')`を書く
 
-```php
-@section('header')
-aaa
-@endsection
-```
-
-- 呼び出す方
-
-index.blade.php
+- 表示するコード
 
 ```php
-@include('layout.header')
-@yield('layout.header')
-```
-
-### コードを共通化したい時
-
-`<head>`タグやスクリプト読み込みなどを全ファイルに書くのは非効率ですよね。
-コードを共通化（継承）する方法です。
-
-- 共通コード
-
-基本的にはそのままコードを記載する
-共通じゃない部分に`@yield('content')`を書く
-
-- 共通コードを呼び出す時
-
-```php
-// 共通コードのファイル名が`resources/views/layout/base.blade.php`の場合
+// 外側のコードのファイル名のviews以下のパスとファイル名を記載する
 @extends('layout.base')
 
+// 外側のコードで`@yield('content')`と記載した部分に以下が表示される
 @section('content')
 aaa
 @endsection
+```
+
+### 表示するビューの内側（一部分）を共通化
+
+表示するビューの内側（一部分）を共通化したい場合です
+例えばフォーム部品とかですね。
+正確には共通化というよりコンポーネント化ですね
+
+- コンポーネント化するコード
+
+そのままコードを記載するだけ
+
+- 上でコンポーネント化したコードを呼び出す
+
+```php
+// ファイル名が`resources/views/hoge/test.blade.php`の場合
+@component('hoge.test', ['user' => $user])
+@endcomponent
 ```
 
 ### ソートしたい時
