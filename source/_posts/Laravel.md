@@ -124,6 +124,17 @@ if (User::where("hoge_id", $hoge["id"])->exists()) {
 }
 ```
 
+### 複雑な WHERE 条件
+
+```php
+$hoge = 1;
+$users = User::where("status", 'new')
+             ->where(function ($query) use ($hoge) {
+               $query->where('user_id', '=', $hoge)->orwhere('user_id2', '=', $hoge);
+             })
+             ->get();
+```
+
 ## コントローラー
 
 ### URL とコントローラーの紐付けを設定したい時
