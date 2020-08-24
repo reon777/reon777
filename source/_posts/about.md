@@ -59,6 +59,15 @@ MySQL、Oracle、MongoDB、Firestore、SQLite、PostgreSQL
 
 Git、Docker Compose、Gitlab CI
 
+### 資格
+
+- 証券外務員一種
+- 応用情報技術者
+- TOEIC:730 点
+- 簿記 3 級
+
+Git、Docker Compose、Gitlab CI
+
 ### 強み
 
 - プログラミングが好き
