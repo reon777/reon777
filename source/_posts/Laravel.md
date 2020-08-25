@@ -272,6 +272,112 @@ php artisan optimize
 php artisan view:clear
 ```
 
+### 画像をアップロードする
+
+blade
+
+```html
+  <form method="POST" enctype="multipart/form-data">
+    @csrf
+
+    <div class="row file_upload">
+      <div class="col-2 col-form-label text-center"><label>関連ファイル</label></div>
+
+      <div class="col-10">
+        <!-- ファイルアップロード -->
+        <?php
+        foreach (range(1, 5)  as $value) {
+          echo '<div class="custom-file mb-3">';
+          echo '<input type="file" class="custom-file-input" name="file' . $value . '" id="file' . $value . '">';
+          echo '<label class="custom-file-label" for="file' . $value . '" id="file' . $value . '_label">選択されていません</label>';
+          echo '</div>';
+          echo '<img id="file' . $value . '_preview" class="preview">';
+        }
+        ?>
+      </div>
+    </div>
+
+    <div class="form-group text-center mt-5">
+      <input type="submit" name="submit" class="btn btn-primary" value="送信">
+    </div>
+
+</form>
+```
+
+Controller
+
+```php
+for ($i = 1; $i <= 5; $i++) {
+  $file = $request->file('file' . $i);
+  if ($request->hasFile('file' . $i) && $request->file('file' . $i)->isValid()) {
+
+    $file = $request->file('file' . $i);
+    $extension = $request->file('file' . $i)->extension();
+    $file_name = md5(uniqid(mt_rand(), true)) . '.' . $extension;
+    $path = Storage::putFileAs("public/hoge/" . $hoge["id"], $file, $file_name, 'public');
+
+    $input = [];
+    $input["hoge_id"] = $hoge["id"];
+    $input["file_name"] = $file->getClientOriginalName();
+    $input["file_path"] = "/storage/hoge/" . $hoge["id"] . "/" . $file_name;
+    $this->correct_image_rotation($input["file_path"]);
+    PatientFile::create($input);
+  }
+}
+```
+
+iPhone で撮った写真は縦向き・横向きが逆になる場合があるので、correct_image_rotation 関数で回転補正してます。
+
+```php
+// 回転補正
+public function correct_image_rotation($img_path)
+{
+  \Log::info('回転補正開始');
+  $imagick = new \Imagick();
+  $url = env("APP_URL") . $img_path;
+  $image = file_get_contents($url);
+  $imagick->readImageBlob($image);
+  $format = strtolower($imagick->getImageFormat());
+  if ($format === 'jpeg') {
+    $orientation = $imagick->getImageOrientation();
+    $isRotated = false;
+    if ($orientation === \Imagick::ORIENTATION_RIGHTTOP) {
+      $imagick->rotateImage('none', 90);
+      $isRotated = true;
+    } elseif ($orientation === \Imagick::ORIENTATION_BOTTOMRIGHT) {
+      $imagick->rotateImage('none', 180);
+      $isRotated = true;
+    } elseif ($orientation === \Imagick::ORIENTATION_LEFTBOTTOM) {
+      $imagick->rotateImage('none', 270);
+      $isRotated = true;
+    }
+    if ($isRotated) {
+      $imagick->setImageOrientation(\Imagick::ORIENTATION_TOPLEFT);
+    }
+  }
+  $imagick->writeImage(ltrim($img_path, "/"));
+}
+```
+
+### アップロードした画像を表示する
+
+Controller
+
+```php
+// ファイル
+$hoge_files = HogeFile::where("id", $id)->get();
+```
+
+blade
+
+```php
+@foreach( $hoge_files as $hoge_file)
+  <a href="<?= $hoge_file->file_path ?>" target="_blank">
+  <img src=' <?= $hoge_file->file_path ?>' style="width:100px">
+  </a>
+@endforeach
+```
+
 ### ベストプラクティス
 
 - [laravel-best-practices](https://github.com/alexeymezenin/laravel-best-practices/blob/master/japanese.md)
