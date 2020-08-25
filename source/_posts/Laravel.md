@@ -277,6 +277,7 @@ php artisan view:clear
 blade
 
 ```html
+<div>
   <form method="POST" enctype="multipart/form-data">
     @csrf
 
@@ -300,8 +301,56 @@ blade
     <div class="form-group text-center mt-5">
       <input type="submit" name="submit" class="btn btn-primary" value="送信">
     </div>
+  </form>
+</div>
 
-</form>
+<script type="text/javascript">
+	// プレビュー表示
+	function show_preview(id) {
+		if ($(id).val() == '') return
+		const file = $(id).prop('files')[0];
+		$(id + '_label').text(file.name)
+		$(id + '_preview').attr('src', null);
+		if (file.type.slice(0, 5) != 'image') {
+			$(id + '_preview').attr('src', '/assets/images/file.png');
+			return
+		}
+
+		// 読み込み用の関数で読み込み完了時に、HTMLにcanvas追加
+		load(file, function(canvas) {
+			console.log('読み込み完了')
+			canvas.toBlob(function(blob) {
+				// プレビュー表示
+				var blobUrl = window.URL.createObjectURL(blob);
+				$(id + '_preview').attr('src', blobUrl);
+				// フォーム送信用に変換
+				$(id).attr('src', canvas.toDataURL());
+			});
+		});
+
+		function load(file, callback) {
+			// canvas: true にすると canvas に画像を描画する(回転させる場合は必須オプション)
+			var options = {
+				canvas: true,
+			};
+
+			loadImage.parseMetaData(file, function(data) {
+				if (data.exif) {
+
+					// 回転補正
+					options.orientation = data.exif.get('Orientation');
+				}
+				// 画像の読み込み。完了時に callback が呼び出される
+				loadImage(file, callback, options);
+			});
+		}
+	}
+	for (let i = 1; i <= 5; i++) {
+		$('#file' + i).on('change', function() {
+			show_preview('#file' + i)
+		});
+	}
+</script>
 ```
 
 Controller
