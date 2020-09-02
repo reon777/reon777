@@ -19,17 +19,18 @@ date: 2018-01-01
 
 ## 基本情報
 
-| 項目      | 内容                                           |
-| --------- | ---------------------------------------------- |
-| Age       | 30 才                                          |
-| Birth     | 1990 年 08 月                                  |
-| Family    | 既婚・子２人                                   |
-| Location  | 福岡県・北九州市                               |
-| Education | 国立大学工学部                                 |
-| Blog      | [reon777 のメモメモリー](https://reon777.com/) |
-| Twitter   | [@reo3313](https://twitter.com/reo3313)        |
-| Qiita     | [reon777](https://qiita.com/reon777)           |
-| Github    | [reon777](https://github.com/reon777)          |
+| 項目      | 内容                                              |
+| --------- | ------------------------------------------------- |
+| Age       | 30 才                                             |
+| Birth     | 1990 年 08 月                                     |
+| Family    | 既婚・子２人                                      |
+| Location  | 福岡県・北九州市                                  |
+| Education | 国立大学工学部                                    |
+| Blog      | [reon777 のメモメモリー](https://reon777.com/)    |
+| Twitter   | [@reo3313](https://twitter.com/reo3313)           |
+| Qiita     | [reon777](https://qiita.com/reon777)              |
+| Github    | [reon777](https://github.com/reon777)             |
+| Gitlab    | [reon777](https://gitlab.com/reon777) ※メイン利用 |
 
 ## 資格
 
