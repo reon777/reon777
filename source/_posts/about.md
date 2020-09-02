@@ -5,9 +5,10 @@ date: 2018-01-01
 
 ## 自己紹介
 
-野村総合研究所で SIer を３年経験した後、独立してフリーランスエンジニアとして１年間の活動を経て、現在は Web 系企業でウェブアプリケーションエンジニアをしてます。
 エンジニア歴は７年目になります。
 主な担当はフロントエンドとバックエンドです。
+
+野村総合研究所で SIer を３年経験した後、独立してフリーランスエンジニアとして１年間の活動を経て、現在は Web 系企業でウェブアプリケーションエンジニアをしてます。
 
 趣味は仮想通貨のシステムトレードの開発です。
 最近はアービトラージのシステムを構築中です。
@@ -39,15 +40,15 @@ date: 2018-01-01
 
 ## スキル
 
-利用経験があるものを以下に列挙します。
+最低１年以上の業務経験があるものを以下に列挙します。
 
 ### 言語
 
-JavaScript、Node.js、Python、PHP、Solidity、Go
+JavaScript、Node.js、PHP、Solidity
 
 ### フレームワーク
 
-Vue.js、Cordova、Laravel、Flask、Knockout.js
+Vue.js、Cordova、Laravel、Knockout.js
 
 ### データベース
 
@@ -55,15 +56,17 @@ MySQL、Oracle、MongoDB、Firestore、SQLite、PostgreSQL
 
 ### クラウド
 
-- Firebase(Firestore・Authentication・Hosting・Cloud Storage・Realtime Database)
+- Firebase(Firestore/Authentication/Hosting/Cloud Storage/Realtime Database)
 - AWS(EC2・Route 53)
-- Netlify
-- Heroku
-- ConoHa
 
 ### その他
 
 Git、Docker Compose、Gitlab CI
+
+### プライベートでの利用経験
+
+- Python(3 年以上)
+- Go(初級程度)
 
 ### 強み
 
@@ -78,7 +81,7 @@ Git、Docker Compose、Gitlab CI
 以下のキーワードの内、１つ以上該当があると嬉しいです。
 
 ・分野：金融系、教育系、データ分析、機械学習、仮想通貨、ネイティブアプリ開発
-・言語：Python、Go、React、TypeScript、Firebase
+・言語：Python、Go、React、TypeScript
 
 ## 転職先に求めるもの
 
@@ -87,10 +90,9 @@ Git、Docker Compose、Gitlab CI
 住所が福岡県北九州市のはずれということもあり、おそらく基本的に出社は難しいです。  
 仮に会社が福岡市 or 北九州市であれば週１回程度は可能です。
 
-### 週 30 時間程度の業務時間
+### 週 20~30 時間程度の業務時間
 
-まだ子供が小さく（６歳と４歳）、子供との時間の確保を最優先するため、週 30 時間程度の業務時間を希望します。  
-忙しい時期に一時的に 40 時間にするなどは問題ありません。
+まだ子供が小さく（６歳と４歳）、子供との時間の確保を最優先するため、週 20~30 時間程度の業務時間を希望します。
 
 ## 自然言語
 
