@@ -427,6 +427,18 @@ blade
 @endforeach
 ```
 
+### view の変数を JavaScript 側で利用したい時
+
+View
+
+```php
+<script type="text/javascript">
+  const users = @json($users);
+  users.forEach(user => {
+  })
+</script>
+```
+
 ### ベストプラクティス
 
 - [laravel-best-practices](https://github.com/alexeymezenin/laravel-best-practices/blob/master/japanese.md)
