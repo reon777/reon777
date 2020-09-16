@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "clipboard_copy"
+hexo new "ITMS-90809_Deprecated_API_Usage"
 ```
 
 ### キャッシュを削除
