@@ -133,3 +133,19 @@ Controller
 		]);
 
 ```
+
+## クレジットカード削除
+
+```php
+		// PAYJP登録チェック
+		$user = User::where("id", $user["id"])->first();
+		if ($user['payjp_user_id'] == False) {
+			return redirect('clinic/credit_card/register')->with('is_after_complete', '先にクレジットカードを登録する必要があります。');
+		}
+
+		\Payjp\Payjp::setApiKey('ここに秘密鍵を入れる');
+		$cu = \Payjp\Customer::retrieve("cus_から始まる顧客ID");
+		$card = $cu->cards->retrieve("car_から始まるカードID");
+		$card->delete();
+
+```

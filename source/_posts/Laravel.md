@@ -236,6 +236,16 @@ php artisan view:clear
 コメントアウトしている箇所も読み込まれます
 ので内容が不正であればエラーになります
 
+### join したカラムが利用できない
+
+join するテーブルに同じカラム名がある場合は以下のように select を使って別名にする必要があります。
+
+```php
+$user = User::leftJoin("ranks", "ranks.id", "=", "users.rank_id")
+  ->select("ranks.name as rank_name", "users.*")
+  ->first();
+```
+
 ### link タグが読み込まれない
 
 パスの最初に`/`がないとトップページ以外の画面で読み込まれませんでした
@@ -437,6 +447,12 @@ View
   users.forEach(user => {
   })
 </script>
+```
+
+### ローカルのファイルを読み込みたい時
+
+```html
+<script src="{{url('assets/js/plugins/quagga.min.js')}}"></script>
 ```
 
 ### ベストプラクティス
