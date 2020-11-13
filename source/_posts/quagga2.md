@@ -22,7 +22,7 @@ html
 ```html
 <button type="button" class="btn btn-fab btn-round btn-info btc_scan" name="btc_scan"></button>
 <!-- スキャンエリア -->
-<div class="scan_area">
+<div class="scan_area" style="height: 100vh; display:none">
   <div id="photo-area" class="viewport"></div>
 </div>
 ```
@@ -35,6 +35,7 @@ function register_btc_scan() {
   $('.btc_scan').on('click', (event) => {
     $('.scan_area').show()
     startScanner()
+    scrollTo(0, 0)
   })
   const startScanner = () => {
     Quagga.init(
@@ -51,8 +52,6 @@ function register_btc_scan() {
             codeRepetition: false,
             tryVertical: true,
             frameRate: 15,
-            width: 640,
-            height: 480,
             facingMode: 'environment',
           },
         },
@@ -179,5 +178,19 @@ function _onDetected(result) {
   Quagga.stop()
   Quagga.offProcessed(_onProcessed)
   Quagga.offDetected(_onDetected)
+}
+```
+
+そのままだと画面いっぱいのサイズにならないので以下を追加して画面いっぱいのサイズになるようにしました
+無理やり感ありますが、、
+
+```css
+#photo-area.viewport video {
+  transform: translateX(-20vw) translateY(-30vw);
+  width: 120vw;
+}
+
+#photo-area.viewport canvas {
+  transform: translateX(-20vw) translateY(-200vw);
 }
 ```
