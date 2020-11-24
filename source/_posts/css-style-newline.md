@@ -1,7 +1,7 @@
 ---
 title: CSSで改行を反映させる方法
 tags:
-  - CSS
+  - css
 date: 2020-09-30
 ---
 
