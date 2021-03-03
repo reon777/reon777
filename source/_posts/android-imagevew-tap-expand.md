@@ -23,17 +23,10 @@ mImageView.setOnClickListener(v -> {
     SubsamplingScaleImageView imageViewEnlarged = new SubsamplingScaleImageView(getContext());
     Bitmap bitmap = ((BitmapDrawable) mImageView.getDrawable()).getBitmap();
     imageViewEnlarged.setImage(ImageSource.bitmap(bitmap));
-    // 画面の横幅を取得
-    Display display =  ((Activity) getContext()).getWindowManager().getDefaultDisplay();
-    Point size = new Point();
-    display.getSize(size);
-    float width = size.x;
-    float factor =  width / bitmap.getWidth();
-    Dialog dialog = new Dialog(getContext());
-    // 画像をセットして表示する
-    dialog.setContentView(imageViewEnlarged);
-    dialog.getWindow().setLayout((int)(bitmap.getWidth()*factor), (int)(bitmap.getHeight()*factor));
-    dialog.show();
+    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+    builder.setView(imageViewEnlarged);
+    builder.setNegativeButton(R.string.label_close, null);
+    builder.show();
 });
 ```
 
