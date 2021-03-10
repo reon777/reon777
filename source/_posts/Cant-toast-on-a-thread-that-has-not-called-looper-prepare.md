@@ -1,5 +1,5 @@
 ---
-title: Can’t toast on a thread that has not called looper.prepare()エラーの解決策
+title: 【Android開発】Can’t toast on a thread that has not called looper.prepare()エラーの解決策
 tags:
   - Android
 date: 2021-3-9
