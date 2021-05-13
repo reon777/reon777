@@ -2,7 +2,7 @@
 title: 【Android】【ビルドエラー】Could not find method setVariantDir()エラーの解決策
 tags:
   - Android
-date: 2021-5-13
+date: 2021-05-13
 ---
 
 ## エラー
