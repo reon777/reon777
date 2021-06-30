@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "android-error-in-production-build-only"
+hexo new "bootstrap-mixin"
 ```
 
 ### キャッシュを削除
