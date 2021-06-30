@@ -207,7 +207,7 @@ open class AlertDialogFragment : DialogFragment() {
             if (title != "") alertDialog.setTitle(title)
 
             message = bundle.getString(MESSAGE_KEY, "")
-            if (message != "") alertDialog.setMessage(message)
+            if (message != "") alertDialog.setMessage(Html.fromHtml(message))
 
             positiveButtonText = bundle.getString(POSITIVE_BUTTON_TEXT_KEY)
             if (positiveButtonText != "") {
@@ -238,9 +238,18 @@ open class AlertDialogFragment : DialogFragment() {
 
         return alertDialog.create()
     }
+
+    override fun onStart() {
+        super.onStart()
+        val alertDialog = dialog as AlertDialog?
+        if (alertDialog != null) (alertDialog.findViewById<View>(android.R.id.message) as TextView).movementMethod = LinkMovementMethod.getInstance()
+    }
 }
 ```
 
 ### 参考
 
 [DialogFragmentでカスタムダイアログを実装する](https://zenn.dev/m_coder/articles/article-zenn-custom-dialog-by-dialogfragment)
+
+[【Android Studio 4.1】ダイアログにHTMLリンクを表示する方法](https://codeforfun.jp/android-studio-alertdialog-with-html-link/)
+
