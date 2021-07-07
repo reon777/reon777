@@ -14,7 +14,11 @@ npm install sass-loader@10.1.1
 
 ここでバージョン指定しない場合、以下のエラーになるので注意。
 
-this.getOptions is not a function
+- `PostCSS received undefined instead of CSS string`
+- `this.getOptions is not a function`
+
+エラーが出たら一度アンインストールすること
+npm uninstall sass-loader node-sass
 
 ### scss を作成
 
