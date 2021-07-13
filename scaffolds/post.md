@@ -1,9 +1,8 @@
 ---
 title: タイトル
-date: 2020-07-10
-photos: images/php.png
+date: 2021-07-10
 tags:
-  - Cordova
+  - JavaScript
 ---
 
 ![](/images/ムーミン1.jpg)
