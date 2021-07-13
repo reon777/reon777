@@ -53,7 +53,7 @@ export default {
     async getAuth() {
       const res = await axios.get("/auth", {});
       console.log({ res });
-      window.open(res.data);
+      window.open(res.data, "_self");
     },
   },
 };
@@ -181,6 +181,7 @@ export default {
       console.log({ res });
       // アクセストークンが取得できる
       console.log(res.data);
+      this.$router.push("/");
     },
   },
 };
