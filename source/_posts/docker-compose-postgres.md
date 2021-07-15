@@ -7,6 +7,8 @@ date: 2021-07-15 00:00:00
 
 docker-composeにPostgreSQLを導入したので、コードをメモしておきます。
 
+POSTGRES_USERに`user`を指定すると権限エラーになるところで結構ハマりました。。
+
 ./docker/postgresql/initdbフォルダにsqlファイルを入れれば自動的に実行されます。
 
 
