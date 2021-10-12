@@ -63,7 +63,10 @@ class MyDetailActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val myDataList = intent.getParcelableExtra<MyDataList>("MyDataList")
+        // 本来はgetParcelableExtraが正しそうだけど以下のエラーになるのでgetSerializableExtraを使う
+        // Not enough information to infer type variable T
+        // val myDataList = intent.getParcelableExtra("MyDataList") as ArrayList<MyData>
+        val myDataList = intent.getSerializableExtra("MyDataList") as ArrayList<*>
         setContentView(view)
     }
 }
