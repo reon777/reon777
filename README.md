@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "js-json-change-position"
+hexo new "android-activity-pass-object"
 ```
 
 ### キャッシュを削除
