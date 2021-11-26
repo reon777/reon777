@@ -18,7 +18,7 @@ hexo server
 ### 新しい記事を作成
 
 ```bash
-hexo new "android-activity-pass-object"
+hexo new "Caching disabled for task ':app:mergeDebugNativeLibs' エラーの対処法"
 ```
 
 ### キャッシュを削除
