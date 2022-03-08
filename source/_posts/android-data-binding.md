@@ -1,11 +1,11 @@
 ---
-title: 【kotlin】DataBindingを導入する方法【Android開発】
+title: 【kotlin】ViewBindingを導入する方法【Android開発】
 tags:
   - Android
 date: 2022-03-8 09:00:00
 ---
 
-kotlinでDataBindingを導入する方法です。
+kotlinでViewBindingを導入する方法です。
 
 初めに、xmlファイルに対して、全体をlayoutで挟みます。
 
