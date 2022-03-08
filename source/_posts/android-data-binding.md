@@ -1,11 +1,11 @@
 ---
-title: 【kotlin】ViewBindingを導入する方法【Android開発】
+title: 【kotlin】FragmentでViewBindingを導入する方法【Android開発】
 tags:
   - Android
 date: 2022-03-8 09:00:00
 ---
 
-kotlinでViewBindingを導入する方法です。
+kotlinでFragmentのViewBindingを導入する方法です。
 
 初めに、xmlファイルに対して、全体をlayoutで挟みます。
 
@@ -18,7 +18,7 @@ kotlinでViewBindingを導入する方法です。
 </layout>
 ```
 
-次に、kotlinファイルで以下の通りに実装します。
+次に、Fragmentのkotlinファイルで以下の通りに実装します。
 
 ```kotlin
 import android.content.Intent
