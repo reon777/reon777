@@ -24,7 +24,7 @@ Android Studio > リソース・マネージャー（左のタブにあります
 ### 画像を利用する
 
 ```xml
-<hoge.view.AppCompatImageView
+<ImageView
     android:id="@+id/hoge"
     android:layout_marginTop="2dp"
     android:src="@drawable/ic_baseline_notifications_24" />
