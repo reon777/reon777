@@ -1,5 +1,5 @@
 ---
-title: BitbucketにGitリモート認証エラーになった
+title: BitbucketでGitリモート認証エラーになった
 date: 2022-03-11 09:00:00
 ---
 
