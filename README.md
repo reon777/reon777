@@ -13,19 +13,24 @@ https://reon777.com
 
 ## 開発
 
-hexo server
+npx hexo server
+## 初期設定
+
+```
+nvm install 16.15.0
+```
 
 ### 新しい記事を作成
 
 ```bash
-hexo new "Caching disabled for task ':app:mergeDebugNativeLibs' エラーの対処法"
+npx hexo new "android-bundle"
 ```
 
 ### キャッシュを削除
 
 ```bash
-hexo clean
-hexo g
+npx hexo clean
+npx hexo g
 ```
 
 ### デプロイ
