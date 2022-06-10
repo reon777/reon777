@@ -5,20 +5,15 @@ tags:
 date: 2022-03-8 09:00:00
 ---
 
+2022/5/26追記
+公式ページが十分分かりやすいのでこれ見れば十分ですね。。
+<https://developer.android.com/topic/libraries/view-binding>
+
+以下、元の文章。
+
 kotlinでFragmentのViewBindingを導入する方法です。
 
-初めに、xmlファイルに対して、全体をlayoutで挟みます。
-
-```xml
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-<!-- 元のコード -->
-
-</layout>
-```
-
-次に、Fragmentのkotlinファイルで以下の通りに実装します。
+Fragmentのkotlinファイルで以下の通りに実装します。
 
 ```kotlin
 import android.content.Intent
