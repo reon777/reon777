@@ -16,7 +16,7 @@ Javaです。
 
 ```java
   Intent intent = new Intent(this, ToActivity.class);
-  bundle.putExtra("NAME", "太郎");
+  intent.putExtra("NAME", "太郎");
   startActivity(intent);
   finish();
 ```
