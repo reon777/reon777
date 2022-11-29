@@ -23,7 +23,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "android-bundle"
+npx hexo new "rspec-current-company"
 ```
 
 ### キャッシュを削除
