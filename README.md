@@ -23,7 +23,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "rspec-current-company"
+npx hexo new "chromedriver"
 ```
 
 ### キャッシュを削除
