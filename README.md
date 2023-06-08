@@ -23,7 +23,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "FaradayError"
+npx hexo new "RailsLogFormatter"
 ```
 
 ### キャッシュを削除
