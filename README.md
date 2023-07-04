@@ -14,6 +14,7 @@ https://reon777.com
 ## 開発
 
 npx hexo server
+
 ## 初期設定
 
 ```
@@ -23,7 +24,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "RailsLogFormatter"
+npx hexo new "kintoneTimeoutUpload"
 ```
 
 ### キャッシュを削除
