@@ -24,7 +24,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "AndroidBuilErrorJava"
+npx hexo new "RubyMineNoSDK"
 ```
 
 ### キャッシュを削除
