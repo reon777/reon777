@@ -24,7 +24,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "RspecChromeCrash"
+npx hexo new "RubyMineDebase"
 ```
 
 ### キャッシュを削除
