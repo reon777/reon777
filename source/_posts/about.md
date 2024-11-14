@@ -231,7 +231,7 @@ Python を使って仮想通貨 bot を開発・運用しています。
 
 | 項目          | 内容                                                        |
 | ----------- | --------------------------------------------------------- |
-| アプリ         | [アプリを開く](https://poker-action-counter2.firebaseapp.com)   |
+| アプリ         | [アプリを開く](https://poker-action-counter.web.app/)   |
 | ソース         | [ソースを見る](https://gitlab.com/reon777/poker_action_counter) |
 | 新規 or エンハンス | 新規                                                        |
 | チーム         | 1 人                                                       |

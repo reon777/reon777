@@ -24,7 +24,7 @@ nvm install 16.15.0
 ### 新しい記事を作成
 
 ```bash
-npx hexo new "RubyMineDebase"
+npx hexo new "AndroidBeaconCrash"
 ```
 
 ### キャッシュを削除
