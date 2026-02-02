@@ -26,6 +26,10 @@ date: 2018-01-01
 - フロント：（Next.js, TypeScript, Tailwind CSS）
 - バックエンド：（Ruby on Rails）
 
+2025年のgithubの貢献状況
+
+![](/images/2025_github.png)
+
 #### 配送ネットワーク自動切り替え機能の設計・実装（2025）
 
 ##### 概要
