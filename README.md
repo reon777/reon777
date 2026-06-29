@@ -8,17 +8,21 @@ https://reon777.com
 | Key            | Value          |
 | :------------- | :------------- |
 | フレームワーク | Hexo           |
-| Hosting        | Netlify        |
+| Hosting        | Cloudflare Pages |
 | ドメイン       | Route53 at AWS |
+| Node.js        | 22.13.1 |
 
 ## 開発
 
-npx hexo server
+```bash
+npm run server
+```
 
 ## 初期設定
 
-```
-nvm install 16.15.0
+```bash
+nvm install
+npm install
 ```
 
 ### 新しい記事を作成
@@ -30,14 +34,25 @@ npx hexo new "AndroidBeaconCrash"
 ### キャッシュを削除
 
 ```bash
-npx hexo clean
-npx hexo g
+npm run clean
+npm run build
 ```
 
 ### デプロイ
 
-Netlify で自動化済み
-gitlab に push するとデプロイされる
+Cloudflare Pages で自動化済み
+GitLab に push するとデプロイされる
+
+Cloudflare Pages の設定:
+
+| Key | Value |
+| :-- | :-- |
+| Framework preset | Hexo |
+| Build command | `npm run build` |
+| Build output directory | `public` |
+| Environment variables | `NODE_VERSION=22.13.1`, `TZ=Asia/Tokyo` |
+
+Hexo 8 系のため、Cloudflare Pages では `NODE_VERSION=22.13.1` でビルドする。
 
 ### やったこと
 
@@ -52,10 +67,9 @@ npm install hexo-generator-feed --save
 ### テーマを最新化する
 
 ```bash
-cd themes/icarus
-git pull
+npm install hexo-theme-icarus@latest
 ```
 
 ### 見出しのデザイン変える
 
-`border-bottom: solid 3px #0080002e;`で検索する
+`source/css/custom.css`を編集する。

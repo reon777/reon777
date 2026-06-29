@@ -1,9 +1,33 @@
+# OS files
 .DS_Store
 Thumbs.db
-db.json
-*.log
+
+# Dependencies
 node_modules/
+
+# Hexo generated files
 public/
+db.json
 .deploy*/
 false/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Cloudflare / Wrangler local state
+.wrangler/
+.dev.vars
+
+# Local outputs
+outputs/
+
+# Local artifacts
 *.pdf

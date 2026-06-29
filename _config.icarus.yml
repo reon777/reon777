@@ -1,0 +1,89 @@
+version: 5.1.0
+variant: default
+logo: /images/avatar.png
+
+head:
+  favicon: /images/avatar.png
+  rss: /atom.xml
+  open_graph:
+    type: blog
+    twitter_id: reo3313
+    twitter_site: https://twitter.com/reo3313
+
+navbar:
+  menu:
+    Home: /
+    Archives: /archives
+    Tags: /tags
+    About: /2018/01/01/about
+  links: {}
+
+footer:
+  copyright: © 2019
+  links: {}
+
+article:
+  highlight:
+    theme: atom-one-light
+    clipboard: true
+    fold: ''
+  readtime: true
+  update_time: true
+  licenses: {}
+
+search:
+  type: insight
+  index_pages: true
+
+donates: []
+
+sidebar:
+  left:
+    sticky: false
+  right:
+    sticky: false
+
+widgets:
+  - type: profile
+    position: left
+    author: reon777
+    author_title: システムエンジニア
+    location: 福岡県 北九州市
+    avatar: /images/avatar.png
+    avatar_rounded: false
+    gravatar:
+    follow_link: ''
+    social_links:
+      Github:
+        icon: fab fa-github
+        url: https://github.com/reon777
+      Twitter:
+        icon: fab fa-twitter
+        url: https://twitter.com/reo3313
+  - type: toc
+    position: left
+    index: true
+    collapsed: true
+    depth: 3
+  - type: tags
+    position: left
+    order_by: name
+    show_count: true
+  - type: archives
+    position: right
+plugins:
+  animejs: true
+  back_to_top: true
+  busuanzi: false
+  gallery: true
+  google_analytics:
+    tracking_id: UA-139163911-1
+  mathjax: true
+  outdated_browser: true
+  pjax: false
+  progressbar: true
+
+providers:
+  cdn: jsdelivr
+  fontcdn: google
+  iconcdn: fontawesome
