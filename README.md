@@ -3,14 +3,18 @@
 reon777 の個人ブログ（静的サイト）  
 https://reon777.com
 
+Repository: https://github.com/reon777/reon777
+
 ## 利用技術
 
-| Key            | Value          |
-| :------------- | :------------- |
-| フレームワーク | Hexo           |
-| Hosting        | Cloudflare Pages |
-| ドメイン       | Route53 at AWS |
-| Node.js        | 22.13.1 |
+| Key | Value |
+| :-- | :-- |
+| フレームワーク | Hexo 8 |
+| テーマ | Icarus（npm package） |
+| Hosting | Cloudflare Pages |
+| Repository | GitHub |
+| ドメイン | Route53 at AWS |
+| Node.js | 22.13.1 |
 
 ## 開発
 
@@ -40,13 +44,15 @@ npm run build
 
 ### デプロイ
 
-Cloudflare Pages で自動化済み
-GitLab に push するとデプロイされる
+Cloudflare Pages でホスティングする。
+GitHub の `master` に push するとデプロイされる構成にする。
 
 Cloudflare Pages の設定:
 
 | Key | Value |
 | :-- | :-- |
+| Repository | `reon777/reon777` |
+| Branch | `master` |
 | Framework preset | Hexo |
 | Build command | `npm run build` |
 | Build output directory | `public` |
@@ -54,22 +60,23 @@ Cloudflare Pages の設定:
 
 Hexo 8 系のため、Cloudflare Pages では `NODE_VERSION=22.13.1` でビルドする。
 
-### やったこと
+### テーマ設定
 
-```bash
-# サイトマップ
-npm install hexo-generator-sitemap --save
-
-# フィード
-npm install hexo-generator-feed --save
-```
+Icarus は `themes/icarus` に vendoring せず、`hexo-theme-icarus` npm package を使う。
+テーマ設定は `_config.icarus.yml` に置く。
 
 ### テーマを最新化する
 
 ```bash
 npm install hexo-theme-icarus@latest
+npm run build
 ```
 
-### 見出しのデザイン変える
+### 独自 CSS
 
-`source/css/custom.css`を編集する。
+見出しなどの独自 CSS は `source/css/custom.css` を編集する。  
+`scripts/custom-css.js` で全ページに読み込む。
+
+### 広告
+
+AdSense の head script は `scripts/adsense.js` で挿入する。
