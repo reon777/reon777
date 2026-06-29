@@ -22,6 +22,11 @@ Repository: https://github.com/reon777/reon777
 npm run server
 ```
 
+## CI
+
+GitHub Actions で `npm run build` を実行する。
+Cloudflare Pages と同じ Node.js 22.13.1 を使う。
+
 ## 初期設定
 
 ```bash
