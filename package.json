@@ -5,7 +5,7 @@
   "scripts": {
     "server": "hexo server",
     "clean": "hexo clean",
-    "build": "hexo generate"
+    "build": "TZ=Asia/Tokyo hexo generate"
   },
   "hexo": {
     "version": "8.1.2"
