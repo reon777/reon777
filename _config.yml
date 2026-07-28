@@ -84,6 +84,8 @@ deploy:
 ## hexo-generator-sitemap (https://github.com/hexojs/hexo-generator-sitemap)
 sitemap:
   path: sitemap.xml
+  tags: false
+  categories: false
 
 feed:
   type: atom
